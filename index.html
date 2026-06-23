@@ -1,0 +1,3266 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>CoinCarrière — Embauchez les talents des restaurants et hôtels intelligemment</title>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '976673911820829');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=976673911820829&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<!-- Favicon as inline SVG to avoid extra request -->
+<link rel="icon" type="image/jpeg" href="https://res.cloudinary.com/dl296lrkq/image/upload/w_32,h_32,c_fill,f_webp,q_60/v1777292034/575713695_17845265847607766_1699283501162632547_n_ydnpqy.jpg"/>
+
+<!-- DNS prefetch & preconnect -->
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="preconnect" href="https://res.cloudinary.com" crossorigin/>
+<link rel="dns-prefetch" href="https://res.cloudinary.com"/>
+
+<!-- Preload LCP mobile image -->
+<link rel="preload" as="image"
+  href="https://res.cloudinary.com/dl296lrkq/image/upload/w_480,f_webp,q_75/v1779309312/Create_a_premium_mobile_hero_202605202134_dxmdjb.jpg"
+  imagesrcset="https://res.cloudinary.com/dl296lrkq/image/upload/w_480,f_webp,q_75/v1779309312/Create_a_premium_mobile_hero_202605202134_dxmdjb.jpg 480w,
+               https://res.cloudinary.com/dl296lrkq/image/upload/w_828,f_webp,q_75/v1779309312/Create_a_premium_mobile_hero_202605202134_dxmdjb.jpg 828w"
+  imagesizes="100vw"
+  media="(max-width:900px)" fetchpriority="high"/>
+
+<!-- Cairo font — non-render-blocking -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" media="print" onload="this.media='all'"/>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap"/></noscript>
+
+<style>
+/* ═══════════════════════════════
+   BASE
+═══════════════════════════════ */
+/* Ensure text is visible before Cairo loads */
+@font-face {
+  font-family: 'Cairo';
+  font-display: swap;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Cairo',sans-serif;
+  background:#fff;
+  color:#111827;
+  overflow-x:hidden;
+  padding-bottom:0;
+  line-height:1.65;
+}
+
+img{max-width:100%;display:block}
+
+/* Mobile performance */
+@media(max-width:900px){
+  /* Disable heavy animations on mobile */
+  .rv,.rv2,.rv3{transition:none !important;opacity:1 !important;transform:none !important;}
+  /* Reduce paint on off-screen sections */
+  .proof-bar,.logos-section,.testimonials-section,.steps-section{
+    content-visibility:auto;
+    contain-intrinsic-size:0 400px;
+  }
+  /* No backdrop-filter on mobile - very expensive */
+  .chip,.hero-badge,.exit-popup{
+    backdrop-filter:none !important;
+    -webkit-backdrop-filter:none !important;
+  }
+  /* Disable marquee animation GPU cost */
+  .marquee-track{will-change:auto;}
+  /* Disable proof bar glow - expensive */
+  .proof-glow-inner{display:none !important;}
+  /* Disable step pulse rings */
+  .step-pulse-ring{display:none !important;}
+}
+
+.container{max-width:1080px;margin:0 auto;padding:0 24px;width:100%}
+.center{text-align:center}
+
+/* Reveal animation — elements visible by default, JS adds the animation */
+.rv,.rv2,.rv3{opacity:1;transform:none}
+/* JS will add .rv-ready to body once IntersectionObserver is set up */
+.rv-ready .rv{opacity:0;transform:translateY(22px);transition:opacity .55s ease,transform .55s ease}
+.rv-ready .rv.on{opacity:1;transform:translateY(0)}
+.rv-ready .rv2{opacity:0;transform:translateY(22px);transition:opacity .55s .1s ease,transform .55s .1s ease}
+.rv-ready .rv2.on{opacity:1;transform:translateY(0)}
+.rv-ready .rv3{opacity:0;transform:translateY(22px);transition:opacity .55s .2s ease,transform .55s .2s ease}
+.rv-ready .rv3.on{opacity:1;transform:translateY(0)}
+
+/* Section label pill */
+.pill{
+  display:inline-block;
+  font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:#0077B6;
+  background:rgba(0,119,182,.07);
+  border:1px solid rgba(0,119,182,.18);
+  padding:4px 14px;border-radius:50px;
+  margin-bottom:14px;
+}
+
+h2.sec-title{
+  font-size:clamp(1.6rem,3.2vw,2.3rem);
+  font-weight:900;color:#0a1929;line-height:1.3;
+  margin-bottom:12px;
+}
+p.sec-sub{
+  font-size:1rem;color:#1a1a1a;
+  max-width:560px;margin:0 auto;line-height:1.85;
+}
+
+/* CTA Buttons */
+@keyframes btnGlowPulse{
+  0%,100%{box-shadow:0 4px 18px rgba(180,220,2,.35),0 0 0px rgba(180,220,2,0)}
+  50%{box-shadow:0 4px 28px rgba(180,220,2,.55),0 0 38px rgba(180,220,2,.38),0 0 70px rgba(180,220,2,.18)}
+}
+.btn{
+  display:inline-block;
+  background:#b4dc02;color:#000;
+  font-weight:800;font-size:1rem;
+  padding:15px 38px;border-radius:10px;
+  border:none;cursor:pointer;
+  font-family:'Cairo',sans-serif;
+  text-decoration:none;
+  transition:background .2s,transform .15s;
+  letter-spacing:.01em;
+  position:relative;
+  overflow:hidden;
+  animation:btnGlowPulse 2.6s ease-in-out infinite;
+}
+.btn::after{
+  content:'';
+  position:absolute;
+  top:-10%;left:-60%;
+  width:40%;height:120%;
+  background:linear-gradient(105deg,transparent 20%,rgba(255,255,255,.55) 50%,transparent 80%);
+  transform:skewX(-15deg);
+  animation:btnShimmer 2.4s ease-in-out infinite;
+}
+@keyframes btnShimmer{
+  0%{left:-60%}
+  60%,100%{left:130%}
+}
+.btn:hover{background:#9bc400;transform:translateY(-2px);animation-play-state:paused;box-shadow:0 8px 32px rgba(180,220,2,.65),0 0 50px rgba(180,220,2,.35)}
+.btn-sm{padding:11px 26px;font-size:.9rem}
+
+.trust-row{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:18px;
+  margin-top:16px;
+}
+.ti{display:flex;align-items:center;gap:6px;font-size:.83rem;color:#1a1a1a;font-weight:500}
+.ti b{width:6px;height:6px;border-radius:50%;background:#b4dc02;flex-shrink:0;display:inline-block}
+.hero .trust-row{
+  margin-top:18px;
+  justify-content:flex-end;
+  width:100%;
+  direction:ltr;
+}
+.hero .trust-row .ti{
+  color:rgba(255,255,255,.86);
+  flex-direction:row-reverse;
+}
+.hero .trust-row .ti b{
+  background:#b4dc02;
+  box-shadow:0 0 0 2px rgba(180,220,2,.14);
+}
+@media(max-width:900px){
+  .hero .trust-row{
+    display:none !important;
+  }
+}
+
+/* ═══════════════════════════════
+   1. HERO
+═══════════════════════════════ */
+.hero{
+  position:relative;
+  min-height:980px;
+  padding:0 24px;
+  border-bottom:1px solid #f0f4f8;
+  text-align:left;
+  overflow:hidden;
+  display:flex;
+  align-items:stretch;
+  justify-content:flex-start;
+  background:#0a1929;
+}
+@media(max-width:768px){
+  .hero{
+    display:none !important;
+  }
+}
+.hero::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:transparent;
+  z-index:1;
+  pointer-events:none;
+}
+.hero-video{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:0;
+  pointer-events:none;
+  filter:saturate(1.05) brightness(.45);
+}
+
+.hero .container{
+  position:relative;
+  z-index:2;
+  width:100%;
+  min-height:980px;
+}
+.hero .hero-badge{
+  position:absolute;
+  top:36px;
+  left:50%;
+  transform:translateX(-50%);
+  white-space:nowrap;
+  z-index:10;
+  margin-bottom:0;
+}
+.hero-bottom-block{
+  position:absolute;
+  top:50%;
+  left:0;
+  transform:translateY(-50%);
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  width:55%;
+  text-align:left;
+  padding:0 0 0 40px;
+  direction:ltr;
+  z-index:2;
+}
+.hero-bottom-block h1,
+.hero-bottom-block .hero-promise,
+.hero-bottom-block .pain-chips,
+.hero-bottom-block .trust-row,
+.hero-bottom-block .rv{
+  width:100%;
+  text-align:left;
+}
+.hero-bottom-block .pain-chips{
+  justify-content:flex-start;
+}
+.hero-bottom-block .trust-row{
+  justify-content:flex-start;
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,.92);
+  border:1px solid rgba(180,220,2,.5);
+  color:#0a1929;
+  font-size:.78rem;font-weight:700;padding:5px 16px;border-radius:50px;
+  margin-bottom:22px;letter-spacing:.04em;
+  box-shadow:0 8px 24px rgba(0,0,0,.12);
+}
+.hero-badge span{
+  width:7px;height:7px;border-radius:50%;
+  background:#b4dc02;display:inline-block;
+  animation:blink 1.6s ease-in-out infinite;
+}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+
+.hero h1{
+  font-size:clamp(2rem,3.8vw,3.2rem);
+  font-weight:900;line-height:1.45;color:#fff;
+  margin-bottom:32px;
+  text-shadow:0 3px 24px rgba(0,0,0,.7);
+  letter-spacing:-.02em;
+  max-width:100%;
+  text-align:right;
+  width:100%;
+}
+
+@media(max-width:768px){
+  .hero h1{
+    font-size:clamp(2.2rem,5.5vw,3rem);
+    line-height:1.25;
+  }
+}
+@media(max-width:640px){
+  .hero h1{
+    font-size:clamp(1.9rem,6vw,2.4rem);
+    line-height:1.28;
+    margin-bottom:20px;
+  }
+}
+.hero-line{
+  display:block;
+  unicode-bidi:plaintext;
+  white-space:nowrap;
+}
+.hero h1 em{
+  font-style:normal;color:#b4dc02;
+}
+.hero-sub{
+  font-size:1.13rem;color:#fff;
+  max-width:620px;margin:0 auto 26px;line-height:1.85;
+  text-shadow:0 1px 8px rgba(0,0,0,.5);
+}
+.hero-promise{
+  font-size:1.05rem;
+  color:#fff;
+  max-width:100%;
+  width:100%;
+  margin:0 0 32px 0;
+  line-height:1.85;
+  font-weight:600;
+  text-shadow:0 2px 12px rgba(0,0,0,.55);
+  text-align:right;
+}
+.hero-promise .promise-line{
+  display:block;
+}
+@media(max-width:768px){
+  .hero-promise{
+    font-size:0.95rem;
+    margin-bottom:24px;
+  }
+}
+@media(max-width:640px){
+  .hero-promise{
+    font-size:0.88rem;
+    margin-bottom:18px;
+    line-height:1.7;
+  }
+}
+.pain-chips{
+  display:flex;flex-direction:column;gap:10px;
+  margin-bottom:34px;
+  align-items:flex-end;
+  width:100%;
+}
+.chips-row{
+  display:flex;flex-wrap:wrap;gap:10px;
+  justify-content:flex-start;
+  width:100%;
+}
+.hero-bottom-block .trust-row{
+  justify-content:flex-end;
+  width:100%;
+  margin-right:0;
+  padding-right:0;
+}
+.chip{
+  background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.22);
+  color:#fff;
+  font-size:.8rem;font-weight:600;padding:6px 16px;border-radius:50px;
+  backdrop-filter:blur(4px);
+}
+.chip-pos{
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.3);
+  color:#fff;
+}
+@media(max-width:640px){
+  .pain-chips{
+    display:none !important;
+  }
+}
+
+/* ═══════════════════════════════
+   HERO CUSTOM (Mobile) — Full BG Image
+═══════════════════════════════ */
+.hero-custom{
+  display:none;
+  position:relative;
+  width:100%;
+  min-height:100svh;
+  overflow:hidden;
+  color:#fff;
+  flex-direction:column;
+  justify-content:flex-end;
+}
+
+/* الصورة في الخلفية */
+.hero-custom-img{
+  position:absolute;
+  inset:0;
+  z-index:0;
+}
+.hero-custom-img img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center top;
+  display:block;
+}
+/* gradient خفيف فوق الصورة للبادج، وقوي فالأسفل للنص */
+.hero-custom-img::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    180deg,
+    rgba(10,25,41,.35) 0%,
+    rgba(10,25,41,.05) 35%,
+    rgba(10,25,41,.0) 55%,
+    rgba(10,25,41,.72) 78%,
+    rgba(10,25,41,.92) 100%
+  );
+  z-index:1;
+}
+/* البادج فوق الصورة */
+.hero-custom-img .hero-badge-wrap{
+  position:absolute;
+  top:16px;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:2;
+  white-space:nowrap;
+}
+.hero-custom-img .hero-badge-wrap .hero-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background:rgba(255,255,255,.92);
+  border:1px solid rgba(180,220,2,.5);
+  color:#0a1929;
+  font-size:.72rem;
+  font-weight:700;
+  padding:5px 14px;
+  border-radius:50px;
+  box-shadow:0 4px 14px rgba(0,0,0,.18);
+  letter-spacing:.02em;
+  margin-bottom:0;
+}
+.hero-custom-img .hero-badge-wrap .hero-badge span{
+  width:7px;height:7px;border-radius:50%;
+  background:#b4dc02;display:inline-block;
+  animation:blink 1.6s ease-in-out infinite;
+  flex-shrink:0;
+}
+
+/* المحتوى فالأسفل فوق الصورة */
+.hero-custom-content{
+  position:absolute;
+  bottom:0;
+  top:0;
+  left:0;
+  right:0;
+  z-index:2;
+  padding:0 22px 56px;
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-end;
+  gap:24px;
+}
+
+/* العنوان */
+.hero-custom .hero-title{
+  font-size:clamp(1.8rem, 7.5vw, 2.6rem);
+  line-height:1.42;
+  font-weight:900;
+  margin-bottom:20px;
+  color:#fff;
+  text-shadow:0 3px 22px rgba(0,0,0,.6);
+  letter-spacing:-.025em;
+  word-break:keep-all;
+  overflow-wrap:break-word;
+}
+.hero-custom .hero-title .hero-line{
+  display:block;
+  white-space:nowrap;
+}
+.hero-custom .hero-title em{
+  font-style:normal;
+  color:#b4dc02;
+}
+
+/* البروميس */
+.hero-custom .hero-promise{
+  font-size:clamp(1.1rem, 5.5vw, 1.5rem);
+  color:#fff;
+  line-height:1.85;
+  margin:0 auto 22px;
+  max-width:100%;
+  width:100%;
+  text-shadow:0 2px 12px rgba(0,0,0,.7);
+  font-weight:700;
+  text-align:center;
+}
+.hero-custom .hero-promise .promise-line{
+  display:block;
+  white-space:normal;
+  overflow:visible;
+  text-overflow:clip;
+  font-size:clamp(1.1rem, 5.5vw, 1.5rem);
+  color:#fff;
+  font-weight:700;
+  text-align:center;
+}
+
+@media(max-width:768px){
+  .hero-custom .hero-promise .promise-line{
+    font-size:clamp(1.1rem, 5.5vw, 1.4rem);
+    white-space:normal;
+  }
+}
+@media(max-width:480px){
+  .hero-custom .hero-promise .promise-line{
+    font-size:clamp(1rem, 5.5vw, 1.3rem);
+  }
+}
+@media(max-width:360px){
+  .hero-custom .hero-promise .promise-line{
+    font-size:clamp(.95rem, 5.5vw, 1.1rem);
+  }
+}
+.hero-custom .hero-trust{
+  display:flex;
+  flex-wrap:nowrap;
+  justify-content:center;
+  gap:14px;
+  margin-top:16px;
+  width:100%;
+}
+.hero-custom .hero-trust .ti{
+  color:rgba(255,255,255,.6);
+  font-size:.78rem;
+  flex:1;
+  justify-content:center;
+  text-align:center;
+  white-space:nowrap;
+}
+@media(max-width:768px){
+  .hero-custom .hero-trust{
+    gap:0;
+    width:100%;
+  }
+  .hero-custom .hero-trust .ti{
+    flex:1;
+    justify-content:center;
+    font-size:clamp(.72rem, 3.8vw, .88rem);
+    white-space:nowrap;
+    padding:0 4px;
+  }
+}
+
+/* CTA shimmer */
+.hero-cta-animated{
+  position:relative;
+  overflow:hidden;
+  width:100%;
+  max-width:480px;
+  display:block;
+  text-align:center;
+}
+.hero-cta-animated::after{
+  content:'';
+  position:absolute;
+  top:-60%;
+  left:-40%;
+  width:40%;
+  height:220%;
+  background:linear-gradient(90deg, transparent 0%, rgba(255,255,255,.55) 50%, transparent 100%);
+  transform:rotate(20deg) translateX(-250%);
+  animation:cta-shimmer 2.2s ease-in-out infinite;
+  pointer-events:none;
+}
+@keyframes cta-shimmer{
+  0%{ transform:rotate(20deg) translateX(-250%); opacity:0 }
+  25%{ opacity:.9 }
+  65%{ transform:rotate(20deg) translateX(360%); opacity:.9 }
+  100%{ transform:rotate(20deg) translateX(360%); opacity:0 }
+}
+
+@media(max-width:900px){
+  .hero-custom{display:flex;}
+  .hero{display:none !important;}
+}
+
+/* ── Mobile Hero: image on top, text pinned to bottom ── */
+@media(max-width:768px){
+
+  /* gradient: صافي فوق، داكن فالأسفل */
+  .hero-custom-img::before{
+    background:linear-gradient(
+      180deg,
+      rgba(10,25,41,.55) 0%,
+      rgba(10,25,41,.35) 25%,
+      rgba(10,25,41,.45) 50%,
+      rgba(10,25,41,.75) 72%,
+      rgba(10,25,41,.97) 100%
+    );
+  }
+
+  .hero-custom-content{
+    padding:0 20px 56px;
+    justify-content:flex-end;
+    gap:20px;
+  }
+
+  /* headline — responsive وكبير */
+  .hero-custom .hero-title{
+    font-size:clamp(1.7rem, 7vw, 2.4rem);
+    line-height:1.42;
+    margin-bottom:16px;
+    letter-spacing:-.02em;
+    white-space:nowrap;
+  }
+
+  /* subheadline — responsive */
+  .hero-custom .hero-promise{
+    font-size:clamp(.85rem, 3.8vw, 1.05rem);
+    line-height:1.85;
+    margin-bottom:22px;
+    max-width:100%;
+  }
+  .hero-custom .hero-promise .promise-line{
+    font-size:clamp(.78rem, 3.6vw, .95rem);
+    white-space:normal;
+    overflow:visible;
+    text-overflow:clip;
+  }
+
+  /* زر CTA كامل العرض */
+  .hero-custom .btn{
+    width:100%;
+    max-width:320px;
+    text-align:center;
+  }
+
+  .hero-custom .hero-trust{
+    margin-top:14px;
+    flex-wrap:nowrap;
+    gap:0;
+    width:100%;
+  }
+  .hero-custom .hero-trust .ti{
+    color:rgba(255,255,255,.55);
+    font-size:clamp(.72rem, 3.8vw, .88rem);
+    flex:1;
+    justify-content:center;
+    white-space:nowrap;
+    padding:0 4px;
+  }
+}
+
+@media(max-width:480px){
+  .hero-custom .hero-title{
+    font-size:clamp(1.55rem, 7.2vw, 2rem);
+    line-height:1.42;
+    white-space:nowrap;
+  }
+  .hero-custom .hero-promise{
+    font-size:clamp(.8rem, 4vw, .95rem);
+  }
+  .hero-custom .hero-promise .promise-line{
+    font-size:clamp(.72rem, 3.8vw, .88rem);
+    white-space:normal;
+    overflow:visible;
+  }
+  .hero-custom-content{
+    padding:0 16px 52px;
+    gap:18px;
+  }
+}
+
+@media(max-width:360px){
+  .hero-custom .hero-title{
+    font-size:clamp(1.35rem, 7.5vw, 1.7rem);
+    white-space:nowrap;
+  }
+  .hero-custom .hero-promise{
+    font-size:clamp(.78rem, 4.2vw, .9rem);
+  }
+  .hero-custom .hero-promise .promise-line{
+    font-size:clamp(.68rem, 4vw, .82rem);
+  }
+}
+
+/* شاشات كبيرة: iPhone 14 / Pro / Plus وما فوق */
+@media(min-width:390px) and (max-width:900px){
+  .hero-custom-content{
+    padding-bottom:72px;
+    gap:28px;
+  }
+}
+@media(min-width:430px) and (max-width:900px){
+  .hero-custom-content{
+    padding-bottom:88px;
+    gap:32px;
+  }
+}
+
+/* ═══════════════════════════════
+   2. SOCIAL PROOF
+═══════════════════════════════ */
+/* a) Proof bar (numbers) */
+.proof-bar{
+  background:#0a1929;
+  padding:28px 24px;
+  content-visibility:auto;
+  contain-intrinsic-size:0 120px;
+}
+.proof-inner{
+  display:flex;flex-wrap:wrap;justify-content:center;
+  max-width:820px;margin:0 auto;
+  border-radius:14px;
+  overflow:hidden;
+  position:relative;
+  isolation:isolate;
+  /* base border replaced by pseudo glow */
+  border:1px solid rgba(255,255,255,.06);
+}
+
+/* ── Rotating conic-gradient glow border ── */
+.proof-inner::before{
+  content:'';
+  position:absolute;
+  inset:-2px;
+  border-radius:16px;
+  background:conic-gradient(
+    from 0deg,
+    transparent    0%,
+    transparent   30%,
+    rgba(180,220,2,.18) 42%,
+    rgba(180,220,2,.72) 50%,
+    rgba(180,220,2,.18) 58%,
+    transparent   70%,
+    transparent  100%
+  );
+  animation:borderSpin 5s linear infinite;
+  will-change:transform;
+  z-index:-2;
+  pointer-events:none;
+}
+
+/* ── Mask to show only the thin border strip ── */
+.proof-inner::after{
+  content:'';
+  position:absolute;
+  inset:1.5px;
+  border-radius:13px;
+  background:#0a1929;
+  z-index:-1;
+  pointer-events:none;
+}
+
+/* ── Keyframes: full 360° clockwise ── */
+@keyframes borderSpin{
+  from{ transform:rotate(0deg); }
+  to  { transform:rotate(360deg); }
+}
+
+/* ── Inner soft glow bloom (static, adds depth) ── */
+.proof-inner .proof-glow-inner{
+  position:absolute;
+  inset:0;
+  border-radius:14px;
+  pointer-events:none;
+  z-index:0;
+  background:radial-gradient(
+    ellipse 60% 55% at 50% 50%,
+    rgba(180,220,2,.04) 0%,
+    transparent 70%
+  );
+  animation:innerPulse 5s ease-in-out infinite;
+}
+
+@keyframes innerPulse{
+  0%,100%{ opacity:.6; }
+  50%    { opacity:1;  }
+}
+
+/* ── Hover: intensify ── */
+.proof-inner:hover::before{
+  background:conic-gradient(
+    from 0deg,
+    transparent    0%,
+    transparent   25%,
+    rgba(180,220,2,.28) 38%,
+    rgba(180,220,2,.95) 50%,
+    rgba(180,220,2,.28) 62%,
+    transparent   75%,
+    transparent  100%
+  );
+  animation-duration:3.5s;
+}
+
+.proof-item{
+  flex:1;min-width:150px;
+  padding:22px 16px;text-align:center;
+  border-left:1px solid rgba(255,255,255,.08);
+  position:relative;
+  z-index:1;
+}
+.proof-item:last-child{border-left:none}
+.proof-num{
+  display:block;font-size:2rem;font-weight:900;
+  color:#b4dc02;line-height:1;margin-bottom:5px;
+}
+.proof-label{font-size:.78rem;color:rgba(255,255,255,.6);font-weight:500}
+
+/* b) Testimonials */
+.testimonials{
+  position:relative;
+  background:#fff;
+  padding:72px 0 64px;
+  overflow:hidden;
+  border-top:1px solid #f3f4f6;
+  border-bottom:1px solid #f3f4f6;
+  content-visibility:auto;
+  contain-intrinsic-size:0 500px;
+}
+.testimonials .container{
+  position:relative;
+  z-index:1;
+}
+.testimonials .pill{
+  color:#0077B6;
+  background:rgba(0,119,182,.07);
+  border-color:rgba(0,119,182,.18);
+}
+.testimonials .sec-title{
+  color:#0a1929;
+}
+.testimonials .sec-sub{
+  color:#1a1a1a;
+}
+.testimonial-marquee{
+  margin-top:40px;
+  width:100vw;
+  margin-left:calc(50% - 50vw);
+  margin-right:calc(50% - 50vw);
+  direction:ltr;
+}
+.testimonial-row{
+  position:relative;
+  overflow:hidden;
+  width:100%;
+  direction:ltr;
+}
+.testimonial-row + .testimonial-row{
+  margin-top:18px;
+}
+.testimonial-track{
+  display:flex;
+  width:max-content;
+  min-width:max-content;
+  gap:18px;
+  padding:10px 0;
+  will-change:transform;
+  animation:testimonialScroll 38s linear infinite;
+  direction:ltr;
+  backface-visibility:hidden;
+}
+.testimonial-track.reverse{
+  animation-direction:reverse;
+}
+.testimonial-track:hover{
+  animation-play-state:paused;
+}
+@keyframes testimonialScroll{
+  0%{transform:translateX(0)}
+  100%{transform:translateX(-50%)}
+}
+.testimonial-card{
+  width:320px;
+  flex:0 0 auto;
+  background:#fff;
+  border-radius:18px;
+  padding:18px 18px 20px;
+  border:1px solid #e5e7eb;
+  box-shadow:0 14px 34px rgba(15,23,42,.08);
+  transition:transform .2s ease,box-shadow .2s ease;
+  direction:rtl;
+}
+.testimonial-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 20px 42px rgba(15,23,42,.12);
+}
+.testimonial-top{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+.testimonial-avatar{
+  width:56px;
+  height:56px;
+  border-radius:50%;
+  object-fit:cover;
+  flex-shrink:0;
+  border:2px solid #fff;
+  box-shadow:0 4px 12px rgba(0,0,0,.14);
+}
+.testimonial-meta{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  min-width:0;
+}
+.testimonial-name{
+  font-size:1rem;
+  font-weight:800;
+  color:#0a1929;
+  line-height:1.2;
+  margin-bottom:0;
+}
+.testimonial-company{
+  font-size:.88rem;
+  color:#0077B6;
+  font-weight:700;
+  margin-top:0;
+}
+.testimonial-footer,
+.testimonial-role,
+.testimonial-location,
+.testimonial-name-row,
+.testimonial-verify,
+.testimonial-handle{
+  display:none;
+}
+.testimonial-rating{
+  color:#d97706;
+  font-size:1rem;
+  letter-spacing:.08em;
+  margin-top:-2px;
+  line-height:1.1;
+}
+@media(max-width:640px){
+  .testimonial-marquee{
+    width:100vw;
+    margin-inline:calc(50% - 50vw);
+  }
+  .testimonial-card{
+    width:286px;
+  }
+  .testimonial-track{
+    gap:14px;
+    padding:10px 0;
+  }
+}
+/* c) Logos marquee */
+.logos-section{
+  position:relative;
+  background:#fff;
+  padding:32px 0 20px;
+  overflow:hidden;
+  border-top:1px solid #f0f4f6;
+  border-bottom:1px solid #f0f4f6;
+}
+.logos-label{
+  text-align:center;
+  font-size:.78rem;
+  color:#1a1a1a;
+  font-weight:700;
+  letter-spacing:.04em;
+  margin-bottom:16px;
+  padding:0 20px;
+}
+.marquee-wrapper{
+  overflow:hidden;
+  width:100%;
+  position:relative;
+}
+.marquee-wrapper::before,
+.marquee-wrapper::after{
+  content:'';
+  position:absolute;
+  top:0;bottom:0;
+  width:80px;
+  z-index:2;
+  pointer-events:none;
+}
+.marquee-wrapper::before{left:0;background:linear-gradient(to right,#fff 40%,transparent)}
+.marquee-wrapper::after{right:0;background:linear-gradient(to left,#fff 40%,transparent)}
+
+.marquee-track{
+  display:flex;
+  width:max-content;
+  align-items:center;
+  will-change:transform;
+}
+@keyframes logoScroll{
+  0%  {transform:translateX(0)}
+  100%{transform:translateX(-50%)}
+}
+.marquee-group{
+  display:flex;
+  align-items:center;
+  flex-shrink:0;
+}
+.logo-slot{
+  flex:0 0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:0 24px;
+  height:60px;
+}
+.logo-img{
+  height:48px;
+  width:auto;
+  max-width:none;
+  object-fit:contain;
+  display:block;
+  filter:grayscale(15%) opacity(.85);
+  transition:filter .25s,transform .25s;
+}
+.logo-img:hover{filter:grayscale(0%) opacity(1);transform:translateY(-2px)}
+
+/* Mobile logos fix */
+@media(max-width:768px){
+  .logos-section{padding:24px 0 16px}
+  .marquee-wrapper::before,
+  .marquee-wrapper::after{width:30px}
+  .logo-slot{
+    padding:0 20px;
+    height:64px;
+    min-width:100px;
+  }
+  .logo-img{
+    height:40px !important;
+    width:auto !important;
+    min-width:60px;
+    max-width:120px;
+    filter:none !important;
+    opacity:1 !important;
+    display:block !important;
+    visibility:visible !important;
+  }
+  .marquee-track{animation-duration:25s}
+  .marquee-group{display:flex;align-items:center}
+}
+
+/* ═══════════════════════════════
+   HERO CUSTOM (MOBILE)
+═══════════════════════════════ */
+.hero-custom{
+  background:url('https://res.cloudinary.com/dl296lrkq/image/upload/v1777376929/Untitled_1080_x_1920_px_1_ikpcu4.png') no-repeat center center/cover;
+  height:100vh;
+  display:none;
+  flex-direction:column;
+  justify-content:space-between;
+  text-align:center;
+  color:#fff;
+  position:relative;
+  overflow:hidden;
+}
+.top-banner{
+  background:rgba(255,255,255,.95);
+  color:#000;
+  padding:12px 16px;
+  font-weight:700;
+  font-size:.85rem;
+  letter-spacing:.02em;
+}
+.hero-bottom-content{
+  padding:40px 20px 50px;
+  background:linear-gradient(transparent,rgba(0,0,0,.85));
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  flex:1;
+}
+.hero-bottom-content h1{
+  font-size:1.8rem;
+  font-weight:900;
+  line-height:1.4;
+  margin-bottom:16px;
+  text-shadow:0 2px 8px rgba(0,0,0,.3);
+}
+.hero-bottom-content p{
+  font-size:.95rem;
+  line-height:1.7;
+  margin-bottom:20px;
+  text-shadow:0 1px 4px rgba(0,0,0,.2);
+  opacity:.95;
+}
+.cta-btn{
+  background:#ccff00;
+  color:#000;
+  border:none;
+  padding:14px 32px;
+  font-weight:800;
+  font-size:1rem;
+  border-radius:8px;
+  margin-top:0;
+  cursor:pointer;
+  font-family:'Cairo',sans-serif;
+  transition:background .2s,transform .15s;
+  box-shadow:0 4px 16px rgba(204,255,0,.35);
+  align-self:center;
+}
+.cta-btn:hover{
+  background:#b8e600;
+  transform:translateY(-2px);
+  box-shadow:0 6px 24px rgba(204,255,0,.45);
+}
+/* Show hero-custom on mobile only (max-width: 768px) */
+@media(max-width:768px){
+  .hero-custom{
+    display:flex;
+  }
+  .hero{
+    display:none !important;
+  }
+}
+/* Hide hero-custom on desktop */
+@media(min-width:769px){
+  .hero-custom{
+    display:none !important;
+  }
+  .hero{
+    display:flex;
+  }
+}
+
+/* ═══════════════════════════════
+   3. PROCESS
+═══════════════════════════════ */
+.process-section{
+  background:rgba(52,175,231,.07);
+  padding:72px 24px;
+}
+.steps-row{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:2px;
+  background:#e5e7eb;
+  border:1px solid #e5e7eb;border-radius:16px;
+  overflow:visible;
+  margin-top:44px;
+  position:relative;
+}
+.step{
+  background:#fff;padding:32px 24px;
+  min-width:0;
+  transition:background .2s;position:relative;
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+  isolation:isolate;
+}
+.step:hover{background:#f8fafc}
+.step-header{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  margin-bottom:12px;
+}
+.step-n{
+  width:56px;height:56px;border-radius:16px;
+  background:linear-gradient(135deg,#0077B6,#0096d6);
+  color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+  box-shadow:0 6px 18px rgba(0,119,182,.35);
+  transition:background .4s ease, box-shadow .4s ease, transform .4s ease;
+  position:relative;
+  z-index:1;
+}
+.step h3{font-size:1rem;font-weight:700;color:#0a1929;margin-bottom:0;flex:1;position:relative;z-index:1;transition:color .4s ease;}
+.step p{font-size:.875rem;color:#1a1a1a;line-height:1.75;position:relative;z-index:1;}
+
+/* ── Glow border pseudo-element ── */
+.step::before{
+  content:'';
+  position:absolute;
+  inset:-2px;
+  border-radius:0;
+  background:transparent;
+  border:2.5px solid transparent;
+  pointer-events:none;
+  z-index:2;
+  transition:border-color .35s ease, box-shadow .35s ease;
+}
+
+/* ── Shimmer sweep pseudo-element ── */
+.step::after{
+  content:'';
+  position:absolute;
+  top:0; left:-120%;
+  width:60%;
+  height:100%;
+  background:linear-gradient(
+    105deg,
+    transparent 0%,
+    rgba(180,220,2,.09) 35%,
+    rgba(180,220,2,.22) 50%,
+    rgba(180,220,2,.09) 65%,
+    transparent 100%
+  );
+  transform:skewX(-12deg);
+  pointer-events:none;
+  z-index:2;
+  opacity:0;
+}
+
+/* ── ACTIVE HIGHLIGHT STATE ── */
+.step.step-highlight{
+  background:rgba(180,220,2,.042);
+  transform:scale(1.028);
+  z-index:3;
+  box-shadow:
+    0 0 0 2px #b4dc02,
+    0 6px 32px rgba(180,220,2,.28),
+    0 2px 12px rgba(180,220,2,.18);
+}
+.step.step-highlight::before{
+  border-color:#b4dc02;
+  box-shadow:
+    0 0 18px rgba(180,220,2,.35),
+    inset 0 0 12px rgba(180,220,2,.08);
+}
+.step.step-highlight .step-n{
+  background:#b4dc02;
+  color:#0a1929;
+  box-shadow:0 4px 18px rgba(180,220,2,.55), 0 0 0 4px rgba(180,220,2,.18);
+  transform:scale(1.1);
+}
+.step.step-highlight .step-n svg{
+  stroke:#0a1929;
+}
+.step.step-highlight h3{
+  color:#3a5a00;
+}
+.step.step-highlight::after{
+  animation:stepShimmer .85s ease forwards;
+}
+
+@keyframes stepShimmer{
+  0%  { left:-120%; opacity:0; }
+  15% { opacity:1; }
+  70% { opacity:1; }
+  100%{ left:130%; opacity:0; }
+}
+
+/* ── Pulse ring (inject via JS) ── */
+.step-pulse-ring{
+  position:absolute;
+  inset:0;
+  border-radius:0;
+  border:2px solid #b4dc02;
+  opacity:0;
+  pointer-events:none;
+  z-index:4;
+  animation:stepPulseRing 1.1s ease-out forwards;
+}
+@keyframes stepPulseRing{
+  0%  { opacity:.7; transform:scale(.97); }
+  60% { opacity:.18; transform:scale(1.04); }
+  100%{ opacity:0;  transform:scale(1.07); }
+}
+
+/* smooth transition out */
+.step.step-highlight-exit{
+  transition:
+    background .5s ease,
+    box-shadow .5s ease,
+    transform .5s ease;
+}
+.step.step-highlight-exit::before{
+  transition:border-color .5s ease, box-shadow .5s ease;
+}
+.step.step-highlight-exit .step-n{
+  transition:background .5s ease, box-shadow .5s ease, transform .5s ease, color .5s ease;
+}
+.step.step-highlight-exit h3{
+  transition:color .5s ease;
+}
+
+/* ── responsive steps grid ── */
+@media(min-width:641px){
+  .step:first-child{ border-radius:14px 0 0 14px; }
+  .step:last-child { border-radius:0 14px 14px 0; }
+}
+@media(max-width:640px){
+  .step:first-child{ border-radius:14px 14px 0 0; }
+  .step:last-child { border-radius:0 0 14px 14px; }
+}
+.benefits-section{
+  background:#f9fafb;
+  padding:72px 24px;
+  border-top:1px solid #f0f4f8;border-bottom:1px solid #f0f4f8;
+  content-visibility:auto;
+  contain-intrinsic-size:0 600px;
+}
+.benefits-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:14px;
+  margin-top:44px;
+}
+.benefit-card{
+  background:#fff;border:1px solid #e5e7eb;border-radius:14px;
+  padding:26px 22px;
+  transition:border-color .2s,box-shadow .2s,transform .2s;
+  display:grid;
+  grid-template-columns:auto 1fr;
+  grid-template-rows:auto auto auto;
+  gap:8px 14px;
+  height:100%;
+  align-content:flex-start;
+}
+.benefit-card:hover{
+  border-color:#0077B6;
+  box-shadow:0 4px 20px rgba(0,119,182,.09);
+  transform:translateY(-2px);
+}
+.b-icon{
+  width:52px;height:52px;border-radius:14px;
+  background:linear-gradient(135deg,#0077B6,#00a8e8);
+  display:flex;align-items:center;justify-content:center;
+  font-size:0;line-height:0;color:transparent;
+  margin-bottom:0;
+  box-shadow:0 6px 16px rgba(0,119,182,.3);
+  grid-row:1;
+  grid-column:1;
+  align-self:flex-start;
+}
+.b-icon::before{
+  content:'';
+  width:26px;
+  height:26px;
+  display:block;
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size:contain;
+}
+.benefits-grid .benefit-card:nth-child(1) .b-icon::before{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23ffffff' d='M13 2 3 14h7l-1 8 11-14h-7l1-6z'/%3E%3C/svg%3E");
+}
+.benefits-grid .benefit-card:nth-child(2) .b-icon::before{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='8' fill='none' stroke='%23ffffff' stroke-width='2.2'/%3E%3Ccircle cx='12' cy='12' r='3' fill='%23ffffff'/%3E%3Cpath d='M12 2v4M22 12h-4M12 22v-4M2 12h4' stroke='%23ffffff' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+.benefits-grid .benefit-card:nth-child(3) .b-icon::before{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23ffffff' stroke-width='2.2' d='M4 12a8 8 0 1 0 16 0a8 8 0 1 0-16 0'/%3E%3Cpath d='M7 7l10 10' stroke='%23ffffff' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+.benefits-grid .benefit-card:nth-child(4) .b-icon::before{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23ffffff' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' d='M7 3h10a2 2 0 0 1 2 2v16H5V5a2 2 0 0 1 2-2z'/%3E%3Cpath d='M9 3v4h6V3' stroke='%23ffffff' stroke-width='2.2' stroke-linecap='round'/%3E%3Cpath d='M8 11h8M8 15h8' stroke='%23ffffff' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+.benefits-grid .benefit-card:nth-child(5) .b-icon::before{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 19V9' stroke='%23ffffff' stroke-width='2.4' stroke-linecap='round'/%3E%3Cpath d='M12 19V5' stroke='%23ffffff' stroke-width='2.4' stroke-linecap='round'/%3E%3Cpath d='M19 19V12' stroke='%23ffffff' stroke-width='2.4' stroke-linecap='round'/%3E%3Cpath d='M4 19h16' stroke='%23ffffff' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+.benefits-grid .benefit-card:nth-child(6) .b-icon::before{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23ffffff' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' d='M4 19a8 8 0 0 1 16 0'/%3E%3Ccircle cx='12' cy='8' r='3' fill='none' stroke='%23ffffff' stroke-width='2.2'/%3E%3Cpath d='M18 8h2M19 6l1-1M19 10l1 1' stroke='%23ffffff' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+.benefit-card h3{font-size:.95rem;font-weight:700;color:#0a1929;margin-bottom:0;grid-row:1;grid-column:2;align-self:center;line-height:1.4;}
+.benefit-result{
+  display:inline-block;
+  background:#f0fdf0;border:1px solid #c6f135;
+  color:#3a6600;font-size:.75rem;font-weight:700;
+  padding:3px 10px;border-radius:20px;
+  margin-top:12px;
+  margin-bottom:0;
+  grid-row:3;
+  grid-column:1 / 3;
+  align-self:flex-end;
+  width:fit-content;
+  justify-self:center;
+}
+.benefit-card p{font-size:.85rem;color:#1a1a1a;line-height:1.7;grid-row:2;grid-column:1 / 3;margin:8px 0 0 0;}
+
+
+/* ═══════════════════════════════
+   6. STATS
+═══════════════════════════════ */
+.stats-section{
+  background:#fff;
+  padding:64px 24px;
+  border-top:1px solid #f0f4f8;border-bottom:1px solid #f0f4f8;
+}
+.stats-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;background:#e5e7eb;
+  border:1px solid #e5e7eb;border-radius:16px;overflow:hidden;
+  max-width:700px;margin:40px auto 0;
+}
+.stat-box{background:#fff;padding:36px 20px;text-align:center}
+.stat-num{
+  display:block;font-size:clamp(2rem,4.5vw,3rem);
+  font-weight:900;color:#0077B6;line-height:1;margin-bottom:8px;
+}
+.stat-label{font-size:.85rem;color:#1a1a1a;font-weight:500}
+.stat-note{font-size:.75rem;color:#0a1929;margin-top:4px}
+
+/* ═══════════════════════════════
+   7. FINAL CTA
+═══════════════════════════════ */
+.final-section{
+  background:linear-gradient(180deg,rgba(10,25,41,.50) 0%,rgba(10,40,80,.75) 100%),url('https://res.cloudinary.com/dl296lrkq/image/upload/v1780591312/ChatGPT_Image_Jun_4_2026_05_40_28_PM_ioneuh.webp') center 35%/cover no-repeat;
+  padding:180px 24px 160px;text-align:center;
+  min-height:780px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;overflow:hidden;
+  content-visibility:auto;
+  contain-intrinsic-size:0 780px;
+}
+.final-section::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 900px 400px at 50% 50%,rgba(180,220,2,.06),transparent);
+}
+.final-section h2{
+  font-size:clamp(1.6rem,3.5vw,2.4rem);
+  font-weight:900;color:#fff;margin-bottom:14px;line-height:1.3;
+}
+.final-sub{font-size:1rem;color:rgba(255,255,255,.65);max-width:500px;margin:0 auto 32px;line-height:1.85}
+
+/* ═══════════════════════════════
+   FOOTER
+═══════════════════════════════ */
+footer{
+  background:#f9fafb;
+  border-top:1px solid #e5e7eb;
+  padding:20px 24px;
+  text-align:center;
+}
+footer p{
+  font-size:.8rem;
+  color:#1a1a1a;
+  margin-bottom:10px;
+}
+.footer-legal{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  flex-wrap:wrap;
+}
+.footer-legal-btn{
+  background:none;
+  border:none;
+  font-family:'Cairo',sans-serif;
+  font-size:.78rem;
+  color:#1a1a1a;
+  cursor:pointer;
+  padding:2px 6px;
+  border-radius:4px;
+  transition:color .2s,background .2s;
+  text-decoration:underline;
+  text-underline-offset:2px;
+}
+.footer-legal-btn:hover{color:#0077B6;background:rgba(0,119,182,.06)}
+.footer-sep{color:#d1d5db;font-size:.7rem;user-select:none}
+
+/* ═══════════════════════════════
+   LEGAL POPUP
+═══════════════════════════════ */
+#legal-overlay{
+  display:none;
+  position:fixed;inset:0;z-index:1100;
+  background:rgba(10,25,41,.7);
+  backdrop-filter:blur(4px);
+  align-items:center;
+  justify-content:center;
+  padding:16px;
+}
+#legal-overlay.open{display:flex}
+.legal-box{
+  background:#fff;
+  border-radius:16px;
+  width:100%;
+  max-width:660px;
+  max-height:85vh;
+  display:flex;
+  flex-direction:column;
+  box-shadow:0 32px 80px rgba(0,0,0,.3);
+  animation:popIn .25s cubic-bezier(.34,1.56,.64,1);
+  overflow:hidden;
+  direction:rtl;
+}
+.legal-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:16px 20px;
+  border-bottom:1px solid #f0f4f8;
+  flex-shrink:0;
+  background:#fff;
+  direction:rtl;
+}
+.legal-header h4{
+  font-size:1rem;
+  font-weight:800;
+  color:#0a1929;
+  margin:0;
+}
+.legal-close{
+  width:30px;height:30px;
+  display:flex;align-items:center;justify-content:center;
+  background:#f3f4f6;border:none;border-radius:8px;
+  cursor:pointer;font-size:1rem;color:#1a1a1a;
+  transition:background .2s;
+  flex-shrink:0;
+}
+.legal-close:hover{background:#e5e7eb}
+.legal-body{
+  flex:1;
+  overflow-y:auto;
+  -webkit-overflow-scrolling:touch;
+  padding:0;
+}
+/* Legal content inner styling */
+.legal-content-inner{
+  padding:24px 28px 32px;
+  direction:rtl;
+  text-align:right;
+  font-family:'Cairo',sans-serif;
+  color:#374151;
+  font-size:.88rem;
+  line-height:1.75;
+}
+.legal-date{
+  font-size:.78rem;
+  color:#4b5563;
+  margin-bottom:20px;
+}
+.legal-content-inner h5{
+  font-size:.95rem;
+  font-weight:800;
+  color:#0a1929;
+  margin:22px 0 8px;
+  padding-bottom:4px;
+  border-bottom:2px solid #f0f4f8;
+}
+.legal-content-inner h6{
+  font-size:.85rem;
+  font-weight:700;
+  color:#374151;
+  margin:14px 0 6px;
+}
+.legal-content-inner p{
+  margin-bottom:10px;
+}
+.legal-content-inner ul{
+  padding-right:18px;
+  padding-left:0;
+  margin-bottom:10px;
+}
+.legal-content-inner ul li{
+  margin-bottom:4px;
+}
+.legal-content-inner table th,
+.legal-content-inner table td{
+  text-align:right !important;
+}
+@media(max-width:600px){
+  .legal-box{max-height:92vh;border-radius:14px}
+  .legal-content-inner{padding:18px 16px 28px}
+}
+#sticky-bar{
+  position:fixed;bottom:0;left:0;right:0;z-index:999;
+  background:#b4dc02;
+  padding:12px 20px;
+  display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;
+  box-shadow:0 -2px 20px rgba(0,0,0,.12);
+  transform:translateY(100%);
+  transition:transform .35s cubic-bezier(.4,0,.2,1);
+}
+.s-text{font-weight:700;font-size:.9rem;color:#0a1929;font-family:'Cairo',sans-serif}
+.s-btn{
+  background:#0a1929;color:#b4dc02;
+  font-weight:800;font-size:.88rem;
+  padding:9px 22px;border-radius:8px;
+  text-decoration:none;white-space:nowrap;
+  font-family:'Cairo',sans-serif;transition:background .2s;
+}
+.s-btn:hover{background:#1a3a5c}
+
+/* ═══════════════════════════════
+   EXIT POPUP
+═══════════════════════════════ */
+#exit-overlay{
+  display:none;position:fixed;inset:0;z-index:1000;
+  background:rgba(10,25,41,.8);backdrop-filter:blur(6px);
+  align-items:flex-end;justify-content:center;padding:0;
+}
+@media(min-width:600px){
+  #exit-overlay{
+    align-items:center;
+    padding:20px;
+  }
+}
+.popup-box{
+  background:#fff;border-radius:24px 24px 0 0;
+  max-width:480px;width:100%;
+  padding:32px 24px 40px;text-align:center;position:relative;
+  box-shadow:0 -8px 40px rgba(0,0,0,.25);
+  font-family:'Cairo',sans-serif;
+  animation:slideUp .35s cubic-bezier(.34,1.2,.64,1);
+}
+@media(min-width:600px){
+  .popup-box{
+    border-radius:20px;
+    padding:40px 28px;
+    animation:popIn .3s cubic-bezier(.34,1.56,.64,1);
+    box-shadow:0 32px 80px rgba(0,0,0,.35);
+  }
+}
+@keyframes slideUp{from{transform:translateY(100%);opacity:0}to{transform:translateY(0);opacity:1}}
+@keyframes popIn{from{transform:scale(.85);opacity:0}to{transform:scale(1);opacity:1}}
+
+/* شريط سحب فوق الـ popup على الموبايل */
+.popup-box::before{
+  content:'';
+  display:block;
+  width:40px;height:4px;
+  background:#e5e7eb;
+  border-radius:2px;
+  margin:0 auto 20px;
+}
+@media(min-width:600px){
+  .popup-box::before{ display:none; }
+}
+.popup-close{
+  position:absolute;top:16px;left:16px;
+  width:36px;height:36px;
+  display:flex;align-items:center;justify-content:center;
+  background:#f3f4f6;border:none;cursor:pointer;
+  padding:0;font-size:0;line-height:0;color:transparent;
+  border-radius:50%;
+  transition:background .2s;
+}
+.popup-close:active{ background:#e5e7eb; }
+.popup-close::before{
+  content:'';
+  width:16px;
+  height:16px;
+  display:block;
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size:contain;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 6l12 12M18 6L6 18' stroke='%239ca3af' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+.popup-brand{
+  width:100%;
+  max-width:280px;
+  margin:0 auto 14px;
+  background:transparent;
+  border:none;
+  box-shadow:none;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:visible;
+}
+.popup-brand-img{
+  width:100%;
+  height:auto;
+  max-height:80px;
+  padding:0;
+  object-fit:contain;
+  display:block;
+}
+.popup-hi{
+  background:#fef9e7;border-radius:10px;padding:12px;margin:14px 0;
+  border:1px solid #fde68a;font-size:.84rem;color:#92640a;font-weight:700;
+}
+
+/* FOOTER */
+footer{
+  background:#0a1929;color:#fff;
+  padding:18px 20px;text-align:center;font-size:.82rem;
+}
+footer p{
+  color:#fff;
+  font-weight:500;
+}
+.footer-legal{
+  margin-top:8px;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  flex-wrap:wrap;
+}
+.footer-legal-btn{
+  background:none;border:none;cursor:pointer;
+  color:rgba(255,255,255,.65);
+  font-size:.78rem;font-family:'Cairo',sans-serif;
+  transition:color .2s;
+  padding:2px 4px;
+}
+.footer-legal-btn:hover{color:#b4dc02}
+.footer-sep{color:rgba(255,255,255,.3);font-size:.75rem;}
+
+/* ═══════════════════════════════
+   RESPONSIVE
+═══════════════════════════════ */
+@media(max-width:900px){
+  .hero{
+    padding:70px 20px 50px;
+    min-height:auto;
+  }
+  .hero-badge{
+    padding:4px 12px;
+    font-size:0.7rem;
+    margin-bottom:14px;
+  }
+  .btn{
+    padding:13px 32px;
+    font-size:0.96rem;
+  }
+  .sec-title{
+    font-size:1.6rem;
+  }
+}
+@media(max-width:640px){
+  .hero{
+    padding:50px 18px 30px;
+    min-height:auto;
+  }
+  .hero-badge{
+    padding:3px 10px;
+    font-size:0.65rem;
+    margin-bottom:10px;
+  }
+  .hero-sub{
+    font-size:1rem;
+    margin-bottom:14px;
+  }
+  .btn{
+    padding:11px 26px;
+    font-size:0.9rem;
+  }
+  .sec-title{
+    font-size:1.4rem !important;
+  }
+  .logos-section{
+    padding:20px 0;
+  }
+  .logo-slot{
+    height:60px;
+    padding:0 16px;
+    min-width:90px;
+  }
+  .logo-img{
+    height:38px !important;
+    width:auto !important;
+    min-width:50px;
+    filter:none !important;
+    opacity:1 !important;
+    display:block !important;
+  }
+  .proof-inner{flex-direction:column}
+  .proof-item{border-left:none;border-top:1px solid rgba(255,255,255,.08)}
+  .proof-item:first-child{border-top:none}
+  .proof-num{font-size:1.8rem}
+  .proof-label{font-size:0.75rem}
+  .steps-row{grid-template-columns:1fr}
+  .step{padding:22px 16px}
+  .step-header{margin-bottom:10px}
+  .step h3{font-size:0.95rem}
+  .step p{font-size:0.8rem}
+  .stats-grid{grid-template-columns:1fr}
+  .stat-box{border-bottom:1px solid #e5e7eb;padding:26px 16px}
+  .stat-num{font-size:2rem}
+  .stat-label{font-size:0.8rem}
+  .benefits-grid{grid-template-columns:1fr}
+  .benefit-card{padding:20px 16px}
+  .benefit-card h3{font-size:0.9rem}
+  .benefit-card p{font-size:0.8rem}
+  .testi-grid{grid-template-columns:1fr}
+  .final-section{
+    padding:0;
+    min-height:100svh;
+    align-items:stretch;
+  }
+  .final-section .final-inner{
+    min-height:100svh;
+    justify-content:space-between !important;
+    padding:0;
+  }
+  .final-section .final-top{
+    padding:30vh 22px 24px;
+    background:linear-gradient(180deg,rgba(10,25,41,.72) 0%,rgba(10,25,41,.0) 100%);
+    width:100%;
+  }
+  .final-section .final-bottom{
+    padding:24px 22px 20vh;
+    background:linear-gradient(0deg,rgba(10,25,41,.82) 0%,rgba(10,25,41,.0) 100%);
+    width:100%;
+  }
+  .final-section h2{
+    font-size:1.55rem;
+    margin-bottom:10px;
+  }
+  .final-sub{
+    font-size:0.92rem;
+    margin-bottom:0;
+  }
+  #sticky-bar{flex-direction:column;gap:10px;padding:12px 14px}
+  .s-text{font-size:0.85rem}
+  .s-btn{font-size:0.8rem;padding:8px 18px}
+  .popup-box{padding:24px 16px}
+  .popup-brand{
+    width:100%;
+    max-width:260px;
+  }
+}
+.hero-mob-top{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:20px;
+}
+.hero-mob-bottom{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:14px;
+  width:100%;
+}
+
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     1. HERO SECTION (DESKTOP)
+     Hook TOF: المشكل + الحل في جملة واحدة
+═══════════════════════════════════════════ -->
+<section class="hero">
+  <img
+    src="https://res.cloudinary.com/dl296lrkq/image/upload/v1780591090/ChatGPT_Image_Jun_4_2026_04_59_04_PM_qjkpwa.webp"
+    alt="hero background"
+    class="hero-video"
+    style="object-fit:cover;width:100%;height:100%;position:absolute;inset:0;z-index:0;pointer-events:none;filter:saturate(1.05) brightness(.45);"
+  />
+
+  <!-- Badge positioned relative to the hero section, not the container -->
+  <!-- Logo top-left -->
+  <div id="hero-logo" style="position:fixed;top:24px;right:32px;z-index:999;background:rgba(255,255,255,0.12);backdrop-filter:blur(6px);border-radius:12px;padding:8px 14px;transition:opacity .8s ease;">
+    <img src="https://res.cloudinary.com/dl296lrkq/image/upload/v1777291285/1762829178875-w23oav1d4pb_wgqrdo.png" alt="CoinCarrière" style="height:72px;width:auto;display:block;"/>
+  </div>
+
+  <div class="container"></div>
+
+  <div class="hero-bottom-block">
+    <h1 class="rv">
+      <span class="hero-line">Embauchez <em>dans les restaurants et hôtels</em></span>
+      <span class="hero-line">sans gaspiller du temps avec des <em>CVs</em></span>
+      <span class="hero-line">qui ne deviennent jamais interviews</span>
+    </h1>
+
+    <p class="hero-promise rv2">
+      <span class="promise-line">Une plateforme qui vous connecte avec des candidats filtrés et sérieux</span>
+      <span class="promise-line">prêts pour une entrevue, pour arrêter le gaspillage de temps avec des CV aléatoires</span>
+    </p>
+
+    <div class="pain-chips rv">
+      <div class="chips-row">
+        <span class="chip chip-pos">✅ Candidats adaptés au domaine</span>
+        <span class="chip chip-pos">✅ Embauche plus rapide et au bon moment</span>
+      </div>
+      <div class="chips-row">
+        <span class="chip chip-pos">✅ Réduction des absences et des candidats non sérieux</span>
+        <span class="chip chip-pos">✅ Filtrage par ville et spécialité</span>
+      </div>
+    </div>
+
+    <div class="rv">
+      <a href="https://coincarriere.com/register?type=company" class="btn" style="min-width:340px;text-align:center;display:inline-block;">Essayer maintenant</a>
+    </div>
+
+    <div class="trust-row rv" style="justify-content:flex-start;width:100%;direction:ltr;gap:22px;">
+      <span class="ti" style="gap:6px;"><b></b>Sans complications</span>
+      <span class="ti" style="gap:6px;"><b></b>Gagnez du temps</span>
+      <span class="ti" style="gap:6px;"><b></b>Embauche plus efficace</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     HERO CUSTOM (Mobile)
+═══════════════════════════════════════════ -->
+<section class="hero-custom">
+
+  <!-- الجزء الفوقي: الصورة + البادج فوقها -->
+  <div class="hero-custom-img">
+    <img
+      src="https://res.cloudinary.com/dl296lrkq/image/upload/w_480,f_webp,q_75/v1779309312/Create_a_premium_mobile_hero_202605202134_dxmdjb.jpg"
+      srcset="https://res.cloudinary.com/dl296lrkq/image/upload/w_390,f_webp,q_70/v1779309312/Create_a_premium_mobile_hero_202605202134_dxmdjb.jpg 390w,
+              https://res.cloudinary.com/dl296lrkq/image/upload/w_480,f_webp,q_75/v1779309312/Create_a_premium_mobile_hero_202605202134_dxmdjb.jpg 480w,
+              https://res.cloudinary.com/dl296lrkq/image/upload/w_828,f_webp,q_75/v1779309312/Create_a_premium_mobile_hero_202605202134_dxmdjb.jpg 828w"
+      sizes="100vw"
+      alt="Plateforme de recrutement"
+      width="480"
+      height="640"
+      loading="eager"
+      fetchpriority="high"
+      decoding="sync"
+    />
+  </div>
+
+  <!-- Bottom section: Title + Text + Button + trust -->
+  <div class="hero-custom-content">
+    <div class="hero-mob-top">
+      <h1 class="hero-title">
+        <span class="hero-line">Vous embauchez dans les <em dir="ltr">restaurants et hôtels</em></span>
+        <span class="hero-line">et vous gaspillez du temps avec des <em>CVs</em></span>
+        <span class="hero-line">qui ne deviennent jamais interviews</span>
+      </h1>
+      <p class="hero-promise">
+        <span class="promise-line">Une plateforme qui vous connecte avec des candidats filtrés et sérieux</span>
+        <span class="promise-line">prêts pour une entrevue dans les <em dir="ltr">restaurants et hôtels</em></span>
+        <span class="promise-line">pour arrêter de gaspiller du temps avec des CV aléatoires</span>
+      </p>
+    </div>
+    <div class="hero-mob-bottom">
+      <a
+        href="https://coincarriere.com/register?type=company"
+       
+        class="btn hero-cta-animated"
+      >
+        Essayer maintenant
+      </a>
+      <div class="hero-trust">
+        <span class="ti"><b></b>Sans complications</span>
+        <span class="ti"><b></b>Gagnez du temps</span>
+        <span class="ti"><b></b>Embauche plus efficace</span>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ═══════════════════════════════════════════
+     2. SOCIAL PROOF
+     أ) أرقام  ب) شهادات عملاء  ج) شعارات شركاء
+═══════════════════════════════════════════ -->
+
+<!-- 2a. Proof numbers -->
+<div class="proof-bar">
+  <div class="container">
+    <div class="proof-inner">
+      <div class="proof-glow-inner" aria-hidden="true"></div>
+      <div class="proof-item rv"><span class="proof-num">+457</span><span class="proof-label">Entreprises actives</span></div>
+      <div class="proof-item rv2"><span class="proof-num">48h</span><span class="proof-label">Temps moyen de réponse</span></div>
+      <div class="proof-item rv3"><span class="proof-num">70%</span><span class="proof-label">Gain de temps en filtrage</span></div>
+      <div class="proof-item rv"><span class="proof-num">95%</span><span class="proof-label">Satisfaction des recruteurs</span></div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<!-- 2b. Partner logos -->
+<div class="logos-section">
+  <p class="logos-label rv">+457 restaurants et hôtels font confiance à CoinCarrière</p>
+  <div class="marquee-wrapper">
+    <div class="marquee-track">
+      <div class="marquee-group" aria-hidden="false">
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1779396049/3_pahwy3.png" alt="Logo" class="logo-img"/></div>
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1779396049/2_ps9kxl.png" alt="Logo" class="logo-img"/></div>
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1779396048/1_n7hvya.png" alt="Logo" class="logo-img"/></div>
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1779396048/13_gs9g3u.png" alt="Logo" class="logo-img"/></div>
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1779396048/12_x1na3v.png" alt="Logo" class="logo-img"/></div>
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1779396047/5_qvp3q3.png" alt="Logo" class="logo-img"/></div>
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1779396048/11_l3y88b.png" alt="Logo" class="logo-img"/></div>
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1779396048/6_vnjedl.png" alt="Logo" class="logo-img"/></div>
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1779396048/9_lg4yup.png" alt="Logo" class="logo-img"/></div>
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1779396047/10_tokdzm.png" alt="Logo" class="logo-img"/></div>
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1779396047/8_g3uzp3.png" alt="Logo" class="logo-img"/></div>
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1779396047/7_zcwn8d.png" alt="Logo" class="logo-img"/></div>
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1779396047/4_tmztal.png" alt="Logo" class="logo-img"/></div>
+      </div>
+      <div class="marquee-group" aria-hidden="true">
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1779396049/3_pahwy3.png" alt="Logo" class="logo-img"/></div>
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1779396049/2_ps9kxl.png" alt="Logo" class="logo-img"/></div>
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1779396048/1_n7hvya.png" alt="Logo" class="logo-img"/></div>
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1779396048/13_gs9g3u.png" alt="Logo" class="logo-img"/></div>
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1779396048/12_x1na3v.png" alt="Logo" class="logo-img"/></div>
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1779396047/5_qvp3q3.png" alt="Logo" class="logo-img"/></div>
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1779396048/11_l3y88b.png" alt="Logo" class="logo-img"/></div>
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1779396048/6_vnjedl.png" alt="Logo" class="logo-img"/></div>
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1779396048/9_lg4yup.png" alt="Logo" class="logo-img"/></div>
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1779396047/10_tokdzm.png" alt="Logo" class="logo-img"/></div>
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1779396047/8_g3uzp3.png" alt="Logo" class="logo-img"/></div>
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1779396047/7_zcwn8d.png" alt="Logo" class="logo-img"/></div>
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1779396047/4_tmztal.png" alt="Logo" class="logo-img"/></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 2c. Testimonials -->
+<section class="testimonials">
+  <div class="container center">
+    <div class="rv">
+      <span class="pill">Témoignages des clients</span>
+      <h2 class="sec-title">Qu'en disent les responsables du recrutement ?</h2>
+      <p class="sec-sub">Les restaurants et hôtels du Maroc voient les résultats dès la première semaine avec CoinCarrière.</p>
+    </div>
+
+    <div class="testimonial-marquee">
+      <div class="testimonial-row">
+        <div class="testimonial-track">
+          <article class="testimonial-card">
+            <div class="testimonial-top">
+              <img loading="lazy" class="testimonial-avatar" decoding="async" width="80" height="80" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&auto=format&fit=crop&q=60" alt="منى الزوين" />
+              <div class="testimonial-meta">
+                <div class="testimonial-name">Amel Bokosh</div>
+                <div class="testimonial-rating">★★★★★</div>
+                <div class="testimonial-company">Atlas Hotel</div>
+              </div>
+            </div>
+            <p class="testimonial-quote">La plateforme CoinCarrière nous a permis d'accéder aux candidats sérieux beaucoup plus rapidement. Le filtrage est maintenant clair et nous n'avons plus perdu de temps avec des candidatures non pertinentes</p>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-top">
+              <img loading="lazy" class="testimonial-avatar" decoding="async" width="80" height="80" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&auto=format&fit=crop&q=60" alt="يونس العلوي" />
+              <div class="testimonial-meta">
+                <div class="testimonial-name">Adel Soghtani</div>
+                <div class="testimonial-rating">★★★★★</div>
+                <div class="testimonial-company">Hôtel Riu Tikida</div>
+              </div>
+            </div>
+            <p class="testimonial-quote">Le filtrage intelligent nous a économisé beaucoup de temps, et nous voyons maintenant que des profils vraiment adaptés à notre hôtel</p>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-top">
+              <img loading="lazy" class="testimonial-avatar" decoding="async" width="80" height="80" src="https://d2uecu6cucl1lj.cloudfront.net/ari/2024/06/25180622/Chaima-Bouhlel-720x720.jpeg" alt="سلمى بوهلال" />
+              <div class="testimonial-meta">
+                <div class="testimonial-name">Skina Bouhalaf</div>
+                <div class="testimonial-rating">★★★★★</div>
+                <div class="testimonial-company">GENEROSA</div>
+              </div>
+            </div>
+            <p class="testimonial-quote">La plateforme nous amène maintenant des candidats qui comprennent le service et sont prêts pour l'entrevue. Cela a vraiment accéléré notre processus de recrutement</p>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-top">
+              <img loading="lazy" class="testimonial-avatar" decoding="async" width="80" height="80" src="https://media.licdn.com/dms/image/v2/D4D03AQE13vTsNNYPlg/profile-displayphoto-scale_200_200/B4DZwktpByJIAY-/0/1770142474645?e=2147483647&v=beta&t=X-yiVTXb3BQMbKOZ9QhYr61smD3nAaccWH7ORbb7g-U" alt="أمين الرازي" />
+              <div class="testimonial-meta">
+                <div class="testimonial-name">El Hussein Ait Abdellah</div>
+                <div class="testimonial-rating">★★★★★</div>
+                <div class="testimonial-company">La Mamounia</div>
+              </div>
+            </div>
+            <p class="testimonial-quote">Ce que j'ai aimé le plus c'est l'organisation. Tout est devenu clair, et dès le jour où nous publions l'offre, nous recevons des profils qualifiés et bien classifiés</p>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-top">
+              <img loading="lazy" class="testimonial-avatar" decoding="async" width="80" height="80" src="https://media.licdn.com/dms/image/v2/D5603AQFe0WqDCbXk3w/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1681465124035?e=2147483647&v=beta&t=rWn-xS8g-azmnSyZk0VB6zd9XSbh0au9igJTq4OZ6OQ" alt="هند العلمي" />
+              <div class="testimonial-meta">
+                <div class="testimonial-name">Bassma Khattabi</div>
+                <div class="testimonial-rating">★★★★★</div>
+                <div class="testimonial-company">Kenzi Tower</div>
+              </div>
+            </div>
+            <p class="testimonial-quote">Les candidats qui nous viennent de CoinCarrière sont sérieux et savent ce qu'ils cherchent. Cela a allégé beaucoup la pression sur notre équipe RH</p>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-top">
+              <img loading="lazy" class="testimonial-avatar" decoding="async" width="80" height="80" src="https://img.youm7.com/large/202207210317491749.jpg" alt="إسماعيل بلهندة" />
+              <div class="testimonial-meta">
+                <div class="testimonial-name">Amin Bartal</div>
+                <div class="testimonial-rating">★★★★★</div>
+                <div class="testimonial-company">7ème Ciel</div>
+              </div>
+            </div>
+            <p class="testimonial-quote">La vitesse de la plateforme aide beaucoup les équipes de recrutement, et nous voyons les résultats dès la première semaine sans complications</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ═══════════════════════════════════════════
+     3. PROCESS — 4 خطوات
+═══════════════════════════════════════════ -->
+<section class="process-section">
+  <div class="container center">
+    <div class="rv">
+      <span class="pill">Comment fonctionne la plateforme</span>
+      <h2 class="sec-title">Recrutez rapidement dans les restaurants et hôtels en 4 étapes</h2>
+      <p class="sec-sub">De la première publication jusqu'à la signature du contrat — tout est simple, fluide et efficace</p>
+    </div>
+
+    <div class="steps-row">
+      <div class="step rv">
+        <div class="step-header">
+          <div class="step-n"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-5v12L3 13"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></div>
+          <h3>Publiez l'offre</h3>
+        </div>
+        <p>Définissez le poste, la ville et les exigences du service ... et publiez votre offre en quelques minutes</p>
+      </div>
+      <div class="step rv2">
+        <div class="step-header">
+          <div class="step-n"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/><circle cx="12" cy="12" r="7" stroke-dasharray="3 2"/></svg></div>
+          <h3>Filtrage intelligent des candidats</h3>
+        </div>
+        <p>Recevez uniquement les profils correspondant au poste, à la ville et à l'expérience dont vous avez besoin</p>
+      </div>
+      <div class="step rv3">
+        <div class="step-header">
+          <div class="step-n"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M9 16l2 2 4-4"/></svg></div>
+          <h3>Suivez les candidats facilement</h3>
+        </div>
+        <p>Organisez les entretiens, suivez les candidatures et accédez rapidement aux candidats disponibles</p>
+      </div>
+      <div class="step rv">
+        <div class="step-header">
+          <div class="step-n"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><polyline points="9 13 11 15 15 11"/></svg></div>
+          <h3>Embauchez plus rapidement</h3>
+        </div>
+        <p>Économisez du temps, réduisez la pression sur votre équipe RH et rendez le recrutement plus organisé et efficace</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     4. BENEFITS — الفوائد الملموسة
+═══════════════════════════════════════════ -->
+<section class="benefits-section">
+  <div class="container center">
+    <div class="rv">
+      <span class="pill">Avantages concrets</span>
+      <h2 class="sec-title">Qu'allez-vous gagner avec CoinCarrière ?</h2>
+      <p class="sec-sub">Des solutions pratiques qui vous aident à économiser du temps et à trouver rapidement des candidats appropriés</p>
+    </div>
+
+    <div class="benefits-grid">
+      <div class="benefit-card rv">
+        <div class="b-icon">&#9889;</div>
+        <h3>Filtrage intelligent des candidats</h3>
+        <p>Accédez uniquement aux candidats adaptés selon le poste et l'expérience dont vous avez besoin</p>
+        <div class="benefit-result">Résultat : 70% de temps économisé</div>
+      </div>
+      <div class="benefit-card rv2">
+        <div class="b-icon">&#127919;</div>
+        <h3>Candidats prêts pour travailler dans les restaurants et hôtels</h3>
+        <p>Des profils motivés et prêts pour les entrevues pour réduire l'absenteisme et les manques de sérieux</p>
+        <div class="benefit-result">Résultat : Des entrevues plus efficaces</div>
+      </div>
+      <div class="benefit-card rv3">
+        <div class="b-icon">&#128683;</div>
+        <h3>Recrutement plus rapide</h3>
+        <p>Organisez votre processus de recrutement et connectez-vous avec les candidats plus rapidement</p>
+        <div class="benefit-result">Résultat : Des décisions plus rapides</div>
+      </div>
+      <div class="benefit-card rv">
+        <div class="b-icon">&#128203;</div>
+        <h3>Meilleure organisation des candidatures</h3>
+        <p>Rassemblez les candidatures et les profils en un seul endroit organisé</p>
+        <div class="benefit-result">Résultat : Un suivi plus facile</div>
+      </div>
+      <div class="benefit-card rv2">
+        <div class="b-icon">&#128202;</div>
+        <h3>Support orienté pour votre secteur</h3>
+        <p>Des solutions adaptées aux restaurants et hôtels et aux besoins quotidiens de recrutement</p>
+        <div class="benefit-result">Résultat : Un recrutement plus précis et amélioré</div>
+      </div>
+      <div class="benefit-card rv3">
+        <div class="b-icon">&#128587;</div>
+        <h3>Vision plus claire du recrutement</h3>
+        <p>Suivez l'engagement et les candidatures et prenez des décisions basées sur des données claires</p>
+        <div class="benefit-result">Résultat : Un meilleur contrôle du recrutement</div>
+      </div>
+    </div>
+
+    <div style="margin-top:44px;" class="rv">
+      <a href="https://coincarriere.com/register?type=company"
+        
+         class="btn">Essayez la plateforme maintenant</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     5. VIDEO — ديمو المنصة
+═══════════════════════════════════════════ -->
+<style>
+.video-section{background:#f9fafb;padding:72px 24px 64px;border-top:1px solid #f0f4f8;border-bottom:1px solid #f0f4f8;}
+.video-text-wrap{max-width:1080px;margin:0 auto;text-align:center;padding:0;}
+.video-box-wrap{max-width:820px;margin:40px auto 0;}
+#play-btn-circle{width:64px;height:64px;border-radius:50%;background:#b4dc02;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 24px rgba(180,220,2,.55),0 0 0 10px rgba(180,220,2,.18);transition:transform .2s,box-shadow .2s;flex-shrink:0;}
+#video-wrapper{position:relative;border-radius:16px;overflow:hidden;box-shadow:0 24px 64px rgba(10,25,41,.18);border:1px solid #e5e7eb;background:#0a1929;cursor:pointer;}
+#demo-video{width:100%;display:block;max-height:520px;object-fit:cover;}
+#video-play-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(180deg,rgba(10,25,41,.35) 0%,rgba(10,25,41,.55) 100%);transition:background .3s;gap:14px;}
+.video-play-label{color:#fff;font-family:'Cairo',sans-serif;font-weight:700;font-size:.9rem;text-shadow:0 2px 8px rgba(0,0,0,.5);margin:0;}
+.video-cta-wrap{margin-top:28px;text-align:center;}
+
+@media(max-width:768px){
+  .video-section{padding:48px 0 52px;}
+  .video-text-wrap{padding:0 24px;}
+  .video-box-wrap{margin-top:28px;width:100%;}
+  #video-wrapper{border-radius:0;border-left:none;border-right:none;border-top:none;border-bottom:none;}
+  #demo-video{max-height:72svh;object-fit:cover;}
+  #play-btn-circle{width:56px;height:56px;}
+  .video-cta-wrap{padding:0 24px;}
+}
+</style>
+<section class="video-section">
+  <div class="video-text-wrap rv">
+    <span class="pill">Voir comment ça fonctionne</span>
+    <h2 class="sec-title">Découvrez comment CoinCarrière simplifie votre recrutement</h2>
+    <p class="sec-sub">Voyez comment trouver des candidats adaptés en moins de temps et avec plus d'organisation</p>
+  </div>
+
+  <div class="video-box-wrap rv2">
+    <div id="video-wrapper" onclick="playDemoVideo()">
+      <video id="demo-video" playsinline preload="metadata">
+        <source src="https://res.cloudinary.com/dl296lrkq/video/upload/v1777554675/demo_xpalk0.webm" type="video/webm"/>
+      </video>
+      <div id="video-play-overlay">
+        <div id="play-btn-circle">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="#0a1929" style="margin-right:-2px">
+            <polygon points="5,3 19,12 5,21"/>
+          </svg>
+        </div>
+        <p class="video-play-label">Voir la démo</p>
+      </div>
+    </div>
+    <div class="video-cta-wrap">
+      <a href="https://coincarriere.com/register?type=company"
+        
+         class="btn" style="margin-top:28px;display:inline-block;">Essayez la plateforme maintenant</a>
+    </div>
+  </div>
+</section>
+<script>
+function playDemoVideo(){
+  var overlay = document.getElementById('video-play-overlay');
+  var video   = document.getElementById('demo-video');
+  var wrapper = document.getElementById('video-wrapper');
+  overlay.style.display = 'none';
+  video.controls = true;
+  wrapper.style.cursor = 'default';
+  wrapper.onclick = null;
+  video.play();
+}
+// hover effect on play button
+(function(){
+  var wrapper = document.getElementById('video-wrapper');
+  var circle  = document.getElementById('play-btn-circle');
+  if(!wrapper||!circle) return;
+  wrapper.addEventListener('mouseenter',function(){ circle.style.transform='scale(1.1)'; circle.style.boxShadow='0 12px 40px rgba(180,220,2,.7),0 0 0 16px rgba(180,220,2,.22)'; });
+  wrapper.addEventListener('mouseleave',function(){ circle.style.transform='scale(1)';   circle.style.boxShadow='0 8px 32px rgba(180,220,2,.55),0 0 0 12px rgba(180,220,2,.18)'; });
+})();
+</script>
+
+
+<!-- ═══════════════════════════════════════════
+     6. STATS
+═══════════════════════════════════════════ -->
+<section class="stats-section">
+  <div class="container center">
+    <div class="rv">
+      <span class="pill">Les chiffres parlent</span>
+      <h2 class="sec-title">Les résultats que les propriétaires de restaurants et d'hôtels réalisent</h2>
+      <p class="sec-sub">Des chiffres montrant comment CoinCarrière aide à organiser et accélérer le recrutement</p>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-box rv">
+        <span class="stat-num count-up" data-target="457" data-prefix="+">0</span>
+        <span class="stat-label">Entreprises et organisations</span>
+        <span class="stat-note">utilisant la plateforme</span>
+      </div>
+      <div class="stat-box rv2">
+        <span class="stat-num count-up" data-target="48" data-suffix="h">0</span>
+        <span class="stat-label">Temps moyen d'accès</span>
+        <span class="stat-note">au premier candidat approprié</span>
+      </div>
+      <div class="stat-box rv3">
+        <span class="stat-num count-up" data-target="95" data-suffix="%">0</span>
+        <span class="stat-label">des responsables de recrutement</span>
+        <span class="stat-note">disent avoir économisé du temps en recrutement</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     7. FINAL CTA
+═══════════════════════════════════════════ -->
+<section class="final-section" id="final-cta-section">
+  <div class="final-inner" style="position:relative;z-index:1;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;">
+    <div class="final-top rv">
+      <h2>Essayez CoinCarrière et rendez le recrutement plus rapide et organisé</h2>
+      <p class="final-sub">
+        Publiez votre offre, trouvez les candidats appropriés, et économisez le temps
+        perdu en recrutement traditionnel
+      </p>
+    </div>
+    <div class="final-bottom rv">
+      <a href="https://coincarriere.com/register?type=company"
+         class="btn" style="font-size:1.05rem;padding:16px 44px;">
+        Essayer maintenant
+      </a>
+      <div class="trust-row">
+        <span class="ti" style="color:rgba(255,255,255,.6)"><b></b>Meilleure organisation</span>
+        <span class="ti" style="color:rgba(255,255,255,.6)"><b></b>Gagnez du temps</span>
+        <span class="ti" style="color:rgba(255,255,255,.6)"><b></b>Embauche plus rapide</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 CoinCarrière – La première plateforme de recrutement pour le secteur des restaurants et hôtels au Maroc</p>
+  <div class="footer-legal">
+    <button class="footer-legal-btn" onclick="openLegal('Nous contacter','contact')">Nous contacter</button>
+    <span class="footer-sep">|</span>
+    <button class="footer-legal-btn" onclick="openLegal('Politique de confidentialité','confidentialite')">Politique de confidentialité</button>
+    <span class="footer-sep">|</span>
+    <button class="footer-legal-btn" onclick="openLegal('Conditions générales','conditions')">Conditions générales</button>
+  </div>
+</footer>
+
+<!-- LEGAL POPUP -->
+<div id="legal-overlay" onclick="if(event.target===this)closeLegal()">
+  <div class="legal-box">
+    <div class="legal-header">
+      <h4 id="legal-title">—</h4>
+      <button class="legal-close" onclick="closeLegal()">✕</button>
+    </div>
+    <div class="legal-body" id="legal-body-content">
+    </div>
+  </div>
+</div>
+
+<!-- LEGAL CONTENT TEMPLATES (hidden) -->
+<div id="legal-content-conditions" style="display:none">
+  <div class="legal-content-inner" style="direction:ltr;text-align:left;">
+
+    <!-- Header -->
+    <div style="text-align:center;padding:8px 0 24px;">
+      <div style="display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;background:#e0f0fb;border-radius:16px;margin-bottom:16px;">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0077B6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+      </div>
+      <h4 style="font-size:1.45rem;font-weight:900;color:#0a1929;margin-bottom:8px;">Conditions Générales d'Utilisation</h4>
+      <p style="font-size:.82rem;color:#4b5563;">Dernière mise à jour : 19 avril 2026</p>
+    </div>
+    <hr style="border:none;border-top:1px solid #f0f4f8;margin-bottom:20px;"/>
+
+    <h5>1. Objet</h5>
+    <p>Les présentes Conditions Générales d'Utilisation (ci-après « CGU ») régissent l'accès et l'utilisation de la plateforme CoinCarrière, accessible à l'adresse coincarriere.com, exploitée par 9558-9321 Québec inc. (NEQ : 1181724304), dont le siège social est situé à Québec, QC, Canada.</p>
+    <p>En accédant à la Plateforme ou en utilisant ses services, vous acceptez d'être lié par les présentes CGU. Si vous n'acceptez pas ces conditions, veuillez ne pas utiliser la Plateforme.</p>
+
+    <h5>2. Définitions</h5>
+    <ul>
+      <li><strong>Plateforme</strong> : le site web coincarriere.com et l'ensemble des services associés</li>
+      <li><strong>Utilisateur</strong> : toute personne accédant à la Plateforme, qu'elle soit inscrite ou non</li>
+      <li><strong>Candidat</strong> : tout Utilisateur inscrit utilisant la Plateforme pour rechercher un emploi, déposer un CV ou postuler à des offres</li>
+      <li><strong>Employeur</strong> : toute personne morale ou physique utilisant la Plateforme pour publier des offres d'emploi et gérer des processus de recrutement</li>
+      <li><strong>Recruteur</strong> : tout utilisateur agissant pour le compte d'un Employeur sur la Plateforme</li>
+      <li><strong>Contenu</strong> : tout texte, image, fichier, CV, offre d'emploi ou autre information publié sur la Plateforme</li>
+      <li><strong>Services</strong> : l'ensemble des fonctionnalités offertes par la Plateforme (publication d'offres, dépôt de CV, gestion de candidatures, planification d'entretiens, etc.)</li>
+    </ul>
+
+    <h5>3. Inscription et compte utilisateur</h5>
+    <h6>3.1 Création de compte</h6>
+    <p>L'accès à certains Services nécessite la création d'un compte. Lors de l'inscription, vous vous engagez à :</p>
+    <ul>
+      <li>Fournir des informations exactes, complètes et à jour</li>
+      <li>Maintenir la confidentialité de vos identifiants de connexion</li>
+      <li>Nous informer immédiatement de toute utilisation non autorisée de votre compte</li>
+      <li>Ne pas créer plusieurs comptes pour la même personne</li>
+    </ul>
+    <h6>3.2 Âge minimum</h6>
+    <p>Vous devez être âgé d'au moins 16 ans pour utiliser la Plateforme. En créant un compte, vous confirmez remplir cette condition.</p>
+    <h6>3.3 Responsabilité du compte</h6>
+    <p>Vous êtes seul responsable de toutes les activités effectuées sous votre compte. CoinCarrière ne saurait être tenu responsable des dommages résultant de l'utilisation non autorisée de votre compte.</p>
+
+    <h5>4. Services proposés</h5>
+    <h6>4.1 Pour les Candidats</h6>
+    <ul>
+      <li>Consultation des offres d'emploi publiées</li>
+      <li>Dépôt de CV et création de profil professionnel</li>
+      <li>Candidature en ligne aux offres d'emploi</li>
+      <li>Suivi de l'avancement des candidatures</li>
+      <li>Consultation des entretiens planifiés</li>
+      <li>Réception de notifications relatives aux candidatures</li>
+    </ul>
+    <h6>4.2 Pour les Employeurs et Recruteurs</h6>
+    <ul>
+      <li>Publication et gestion d'offres d'emploi</li>
+      <li>Réception et gestion des candidatures</li>
+      <li>Consultation des CV et profils de Candidats</li>
+      <li>Planification et gestion d'entretiens</li>
+      <li>Évaluation des Candidats et gestion du pipeline de recrutement</li>
+      <li>Gestion des offres d'embauche</li>
+      <li>Outils d'analyse et de reporting</li>
+    </ul>
+    <h6>4.3 Disponibilité</h6>
+    <p>CoinCarrière s'efforce d'assurer la disponibilité de la Plateforme 24h/24, 7j/7. Toutefois, nous ne garantissons pas un accès ininterrompu et nous nous réservons le droit de suspendre temporairement l'accès pour des raisons de maintenance, de mise à jour ou en cas de force majeure.</p>
+
+    <h5>5. Obligations des Utilisateurs</h5>
+    <h6>5.1 Obligations générales</h6>
+    <p>En utilisant la Plateforme, vous vous engagez à :</p>
+    <ul>
+      <li>Respecter les lois et règlements en vigueur</li>
+      <li>Ne pas publier de contenu illicite, diffamatoire, discriminatoire, haineux ou portant atteinte aux droits de tiers</li>
+      <li>Ne pas usurper l'identité d'une autre personne ou entité</li>
+      <li>Ne pas utiliser la Plateforme à des fins frauduleuses ou malveillantes</li>
+      <li>Ne pas tenter d'accéder de manière non autorisée aux systèmes ou données de la Plateforme</li>
+      <li>Ne pas utiliser de robots, scrapers ou tout autre moyen automatisé pour collecter des données de la Plateforme</li>
+      <li>Ne pas perturber le fonctionnement de la Plateforme</li>
+    </ul>
+    <h6>5.2 Obligations spécifiques aux Candidats</h6>
+    <ul>
+      <li>Fournir des informations véridiques dans leur CV et profil</li>
+      <li>Ne pas postuler à des offres de manière abusive ou non pertinente</li>
+      <li>Respecter la confidentialité des informations relatives aux processus de recrutement</li>
+    </ul>
+    <h6>5.3 Obligations spécifiques aux Employeurs</h6>
+    <ul>
+      <li>Publier des offres d'emploi réelles, licites et non discriminatoires</li>
+      <li>Respecter la législation du travail applicable</li>
+      <li>Traiter les données des Candidats conformément aux lois sur la protection des renseignements personnels</li>
+      <li>Ne pas utiliser les CV et informations des Candidats à des fins autres que le recrutement</li>
+      <li>Ne pas publier d'offres trompeuses, de marketing déguisé ou de schèmes pyramidaux</li>
+    </ul>
+
+    <h5>6. Contenu publié par les Utilisateurs</h5>
+    <h6>6.1 Propriété du contenu</h6>
+    <p>Vous conservez la propriété intellectuelle du Contenu que vous publiez sur la Plateforme. En publiant du Contenu, vous accordez à CoinCarrière une licence non exclusive, mondiale et gratuite pour utiliser, afficher, reproduire et distribuer ce Contenu dans le cadre du fonctionnement des Services.</p>
+    <h6>6.2 Responsabilité du contenu</h6>
+    <p>Vous êtes seul responsable du Contenu que vous publiez. CoinCarrière n'effectue pas de vérification systématique du Contenu publié par les Utilisateurs et ne saurait être tenu responsable de son exactitude ou de sa légalité.</p>
+    <h6>6.3 Modération</h6>
+    <p>CoinCarrière se réserve le droit de supprimer tout Contenu qui contreviendrait aux présentes CGU, aux lois applicables ou qui serait signalé comme inapproprié, et ce, sans préavis ni indemnisation.</p>
+
+    <h5>7. Propriété intellectuelle</h5>
+    <p>L'ensemble des éléments de la Plateforme (design, logos, textes, code source, bases de données, fonctionnalités) est la propriété exclusive de 9558-9321 Québec inc. ou de ses concédants de licence et est protégé par les lois sur la propriété intellectuelle.</p>
+    <p>Toute reproduction, représentation, modification ou exploitation non autorisée de tout ou partie de ces éléments est strictement interdite.</p>
+    <p>Le nom « CoinCarrière », le logo et les marques associées sont des marques de 9558-9321 Québec inc. Leur utilisation sans autorisation écrite préalable est interdite.</p>
+
+    <h5>8. Limitation de responsabilité</h5>
+    <h6>8.1 Rôle d'intermédiaire</h6>
+    <p>CoinCarrière agit en tant qu'intermédiaire technique entre les Candidats et les Employeurs. À ce titre :</p>
+    <ul>
+      <li>Nous ne sommes pas partie aux relations de travail entre Candidats et Employeurs</li>
+      <li>Nous ne garantissons pas l'obtention d'un emploi pour les Candidats</li>
+      <li>Nous ne garantissons pas la qualité des Candidats pour les Employeurs</li>
+      <li>Nous ne sommes pas responsables des décisions d'embauche ou de refus</li>
+    </ul>
+    <h6>8.2 Exclusion de garanties</h6>
+    <p>La Plateforme est fournie « telle quelle » et « selon disponibilité ». Dans les limites permises par la loi, CoinCarrière exclut toute garantie, expresse ou implicite, incluant les garanties de qualité marchande, d'adéquation à un usage particulier et d'absence de contrefaçon.</p>
+    <h6>8.3 Plafond de responsabilité</h6>
+    <p>Dans les limites permises par la loi applicable, la responsabilité totale de CoinCarrière pour tout dommage lié à l'utilisation de la Plateforme est limitée au montant des frais que vous nous avez versés au cours des douze (12) mois précédant le dommage, ou à cent dollars canadiens (100 $ CAD) si aucun frais n'a été versé.</p>
+
+    <h5>9. Suspension et résiliation</h5>
+    <h6>9.1 Par l'Utilisateur</h6>
+    <p>Vous pouvez à tout moment cesser d'utiliser la Plateforme et demander la suppression de votre compte en nous contactant à <a href="mailto:contact@coincarriere.com" style="color:#0077B6">contact@coincarriere.com</a>.</p>
+    <h6>9.2 Par CoinCarrière</h6>
+    <p>Nous nous réservons le droit de suspendre ou de résilier votre accès à la Plateforme, sans préavis, en cas de :</p>
+    <ul>
+      <li>Violation des présentes CGU</li>
+      <li>Comportement frauduleux ou abusif</li>
+      <li>Publication de contenu illicite ou inapproprié</li>
+      <li>Utilisation non autorisée de la Plateforme (scraping, spamming, etc.)</li>
+      <li>Atteinte à la sécurité ou au fonctionnement de la Plateforme</li>
+    </ul>
+
+    <h5>10. Protection des renseignements personnels</h5>
+    <p>La collecte et le traitement de vos renseignements personnels sont régis par notre Politique de confidentialité, qui fait partie intégrante des présentes CGU. En utilisant la Plateforme, vous reconnaissez avoir pris connaissance de cette politique.</p>
+
+    <h5>11. Liens vers des sites tiers</h5>
+    <p>La Plateforme peut contenir des liens vers des sites web de tiers. Ces liens sont fournis à titre informatif uniquement. CoinCarrière n'exerce aucun contrôle sur ces sites et n'est pas responsable de leur contenu, de leurs pratiques de confidentialité ou de leur disponibilité.</p>
+
+    <h5>12. Modifications des CGU</h5>
+    <p>CoinCarrière se réserve le droit de modifier les présentes CGU à tout moment. En cas de modification substantielle, nous vous en informerons par un avis sur la Plateforme ou par courriel. La poursuite de l'utilisation de la Plateforme après notification vaut acceptation des CGU modifiées.</p>
+
+    <h5>13. Droit applicable et juridiction</h5>
+    <p>Les présentes CGU sont régies par les lois de la province de Québec et les lois fédérales du Canada applicables. Tout différend relatif à l'interprétation ou à l'exécution des présentes CGU sera soumis à la compétence exclusive des tribunaux du district judiciaire de Québec, Québec, Canada.</p>
+
+    <h5>14. Divisibilité</h5>
+    <p>Si une disposition des présentes CGU est jugée invalide ou inapplicable par un tribunal compétent, les autres dispositions demeurent pleinement en vigueur.</p>
+
+    <h5>15. Renonciation</h5>
+    <p>Le fait pour CoinCarrière de ne pas exercer un droit prévu aux présentes CGU ne constitue pas une renonciation à ce droit.</p>
+
+    <h5>16. Intégralité de l'accord</h5>
+    <p>Les présentes CGU, conjointement avec la Politique de confidentialité, constituent l'intégralité de l'accord entre vous et CoinCarrière concernant l'utilisation de la Plateforme.</p>
+
+    <h5>17. Contact</h5>
+    <p>Pour toute question relative aux présentes CGU :</p>
+    <p>📧 <a href="mailto:contact@coincarriere.com" style="color:#0077B6">contact@coincarriere.com</a><br/>
+    Entreprise : 9558-9321 Québec inc. (CoinCarrière)<br/>
+    Siège social : Québec, QC, Canada</p>
+  </div>
+</div>
+
+<div id="legal-content-contact" style="display:none">
+  <div class="legal-content-inner" style="padding:0;direction:rtl;text-align:right;">
+
+    <!-- Header -->
+    <div style="text-align:center;padding:32px 28px 24px;">
+      <div style="display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;background:#e0f0fb;border-radius:16px;margin-bottom:16px;">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0077B6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+      </div>
+      <h4 style="font-size:1.45rem;font-weight:900;color:#0a1929;margin-bottom:8px;">Contactez-nous</h4>
+      <p style="font-size:.9rem;color:#1a1a1a;line-height:1.7;">Nous serons ravis de répondre à toutes vos questions et demandes.</p>
+    </div>
+
+    <!-- Form card -->
+    <div style="background:#fff;border:1px solid #e5e9f0;border-radius:16px;padding:28px 24px;margin:0 20px 28px;">
+
+      <div id="contact-form-wrap">
+        <!-- Row 1 -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
+          <div>
+            <label style="display:block;font-size:.82rem;font-weight:700;color:#374151;margin-bottom:6px;">Nom complet <span style="color:#ef4444">*</span></label>
+            <input id="cf-name" type="text" placeholder="" style="width:100%;padding:10px 13px;border:1.5px solid #d1d5db;border-radius:8px;font-size:.9rem;font-family:'Cairo',sans-serif;outline:none;transition:border .2s;color:#111827;background:#fff;direction:rtl;" onfocus="this.style.borderColor='#0077B6'" onblur="this.style.borderColor='#d1d5db'"/>
+          </div>
+          <div>
+            <label style="display:block;font-size:.82rem;font-weight:700;color:#374151;margin-bottom:6px;">Adresse e-mail <span style="color:#ef4444">*</span></label>
+            <input id="cf-email" type="email" placeholder="" style="width:100%;padding:10px 13px;border:1.5px solid #d1d5db;border-radius:8px;font-size:.9rem;font-family:'Cairo',sans-serif;outline:none;transition:border .2s;color:#111827;background:#fff;direction:ltr;text-align:right;" onfocus="this.style.borderColor='#0077B6'" onblur="this.style.borderColor='#d1d5db'"/>
+          </div>
+        </div>
+
+        <!-- Row 2 -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
+          <div>
+            <label style="display:block;font-size:.82rem;font-weight:700;color:#374151;margin-bottom:6px;">Numéro de téléphone</label>
+            <input id="cf-phone" type="tel" placeholder="" style="width:100%;padding:10px 13px;border:1.5px solid #d1d5db;border-radius:8px;font-size:.9rem;font-family:'Cairo',sans-serif;outline:none;transition:border .2s;color:#111827;background:#fff;direction:ltr;text-align:right;" onfocus="this.style.borderColor='#0077B6'" onblur="this.style.borderColor='#d1d5db'"/>
+          </div>
+          <div>
+            <label style="display:block;font-size:.82rem;font-weight:700;color:#374151;margin-bottom:6px;">Sujet</label>
+            <input id="cf-subject" type="text" placeholder="" style="width:100%;padding:10px 13px;border:1.5px solid #d1d5db;border-radius:8px;font-size:.9rem;font-family:'Cairo',sans-serif;outline:none;transition:border .2s;color:#111827;background:#fff;direction:rtl;" onfocus="this.style.borderColor='#0077B6'" onblur="this.style.borderColor='#d1d5db'"/>
+          </div>
+        </div>
+
+        <!-- Message -->
+        <div style="margin-bottom:20px;">
+          <label style="display:block;font-size:.82rem;font-weight:700;color:#374151;margin-bottom:6px;">Message <span style="color:#ef4444">*</span></label>
+          <textarea id="cf-message" rows="5" placeholder="" style="width:100%;padding:10px 13px;border:1.5px solid #d1d5db;border-radius:8px;font-size:.9rem;font-family:'Cairo',sans-serif;outline:none;transition:border .2s;resize:vertical;color:#111827;background:#fff;line-height:1.6;direction:rtl;" onfocus="this.style.borderColor='#0077B6'" onblur="this.style.borderColor='#d1d5db'"></textarea>
+        </div>
+
+        <!-- Error msg -->
+        <div id="cf-error" style="display:none;color:#ef4444;font-size:.82rem;margin-bottom:12px;padding:10px 14px;background:#fef2f2;border-radius:8px;border:1px solid #fecaca;"></div>
+
+        <!-- Footer row -->
+        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+          <span style="font-size:.78rem;color:#4b5563;">* Champs obligatoires</span>
+          <button id="cf-submit-btn" onclick="submitContactForm()" style="display:inline-flex;align-items:center;gap:8px;background:#0077B6;color:#fff;font-weight:700;font-size:.92rem;padding:12px 28px;border-radius:10px;border:none;cursor:pointer;font-family:'Cairo',sans-serif;transition:background .2s,transform .15s;box-shadow:0 4px 14px rgba(0,119,182,.3);" onmouseover="this.style.background='#005f8e'" onmouseout="this.style.background='#0077B6'">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            Envoyer
+          </button>
+        </div>
+      </div>
+
+      <!-- Success state -->
+      <div id="cf-success" style="display:none;text-align:center;padding:32px 16px;">
+        <div style="width:56px;height:56px;background:#d1fae5;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h5 style="font-size:1.1rem;font-weight:800;color:#0a1929;margin-bottom:8px;">Message envoyé avec succès !</h5>
+        <p style="font-size:.88rem;color:#1a1a1a;line-height:1.7;">Merci de nous avoir contactés. Nous vous répondrons dans les plus brefs délais à <strong id="cf-confirm-email"></strong>.</p>
+        <button onclick="resetContactForm()" style="margin-top:18px;background:none;border:1.5px solid #d1d5db;color:#374151;font-size:.85rem;font-weight:600;padding:9px 22px;border-radius:8px;cursor:pointer;font-family:'Cairo',sans-serif;">Envoyer un autre message</button>
+      </div>
+
+    </div><!-- /card -->
+
+  </div>
+</div>
+
+<script>
+function submitContactForm() {
+  const name    = document.getElementById('cf-name').value.trim();
+  const email   = document.getElementById('cf-email').value.trim();
+  const phone   = document.getElementById('cf-phone').value.trim();
+  const subject = document.getElementById('cf-subject').value.trim();
+  const message = document.getElementById('cf-message').value.trim();
+  const errEl   = document.getElementById('cf-error');
+  const btn     = document.getElementById('cf-submit-btn');
+
+  errEl.style.display = 'none';
+  if (!name)    { showCFError('الرجاء إدخال اسمك الكامل.'); return; }
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showCFError('الرجاء إدخال بريد إلكتروني صحيح.'); return; }
+  if (!message) { showCFError('الرجاء إدخال رسالتك.'); return; }
+
+  btn.disabled = true;
+  btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="animation:spin .8s linear infinite"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg> جاري الإرسال…';
+
+  if (typeof fbq === 'function') {
+    fbq('track', 'Lead');
+  }
+
+  const bodyText =
+    'الاسم: ' + name + '\n' +
+    'البريد الإلكتروني: ' + email + '\n' +
+    (phone ? 'الهاتف: ' + phone + '\n' : '') +
+    '\nالرسالة:\n' + message;
+
+  const mailtoLink =
+    'mailto:contact@coincarriere.com' +
+    '?subject=' + encodeURIComponent(subject || 'تواصل عبر CoinCarrière') +
+    '&body=' + encodeURIComponent(bodyText);
+
+  window.location.href = mailtoLink;
+
+  setTimeout(function() {
+    document.getElementById('contact-form-wrap').style.display = 'none';
+    document.getElementById('cf-success').style.display = 'block';
+    document.getElementById('cf-confirm-email').textContent = email;
+  }, 900);
+}
+
+function showCFError(msg) {
+  const e = document.getElementById('cf-error');
+  e.textContent = msg;
+  e.style.display = 'block';
+}
+
+function resetContactForm() {
+  ['cf-name','cf-email','cf-phone','cf-subject','cf-message'].forEach(function(id){
+    document.getElementById(id).value = '';
+  });
+  document.getElementById('cf-error').style.display = 'none';
+  document.getElementById('cf-success').style.display = 'none';
+  document.getElementById('contact-form-wrap').style.display = 'block';
+  const btn = document.getElementById('cf-submit-btn');
+  btn.disabled = false;
+  btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> إرسال';
+}
+</script>
+<style>
+@keyframes spin { to { transform: rotate(360deg); } }
+@media(max-width:560px){
+  #legal-content-contact [style*="grid-template-columns:1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+</style>
+
+<div id="legal-content-confidentialite" style="display:none">
+  <div class="legal-content-inner" style="direction:ltr;text-align:left;">
+
+    <!-- Header -->
+    <div style="text-align:center;padding:8px 0 24px;">
+      <div style="display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;background:#e0f0fb;border-radius:16px;margin-bottom:16px;">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0077B6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+      </div>
+      <h4 style="font-size:1.45rem;font-weight:900;color:#0a1929;margin-bottom:8px;">Politique de Confidentialité</h4>
+      <p style="font-size:.82rem;color:#4b5563;">Dernière mise à jour : 19 avril 2026</p>
+    </div>
+    <hr style="border:none;border-top:1px solid #f0f4f8;margin-bottom:20px;"/>
+
+    <h5>1. Identité du responsable du traitement</h5>
+    <p>Le site coincarriere.com (ci-après « CoinCarrière » ou « la Plateforme ») est exploité par :</p>
+    <p><strong>Raison sociale :</strong> 9558-9321 Québec inc., faisant affaire sous le nom CoinCarrière<br/>
+    <strong>NEQ :</strong> 1181724304<br/>
+    <strong>Siège social :</strong> Québec, QC, Canada<br/>
+    <strong>Courriel :</strong> <a href="mailto:contact@coincarriere.com" style="color:#0077B6">contact@coincarriere.com</a><br/>
+    <strong>Site web :</strong> <a href="https://coincarriere.com" style="color:#0077B6">https://coincarriere.com</a></p>
+    <p>Le responsable de la protection des renseignements personnels est le plus haut dirigeant de l'entreprise, joignable à l'adresse ci-dessus.</p>
+
+    <h5>2. Champ d'application</h5>
+    <p>La présente politique s'applique à tous les utilisateurs de la Plateforme, qu'ils soient candidats, recruteurs, employeurs ou simples visiteurs, et ce, quel que soit leur lieu de résidence. Elle couvre l'ensemble des renseignements personnels collectés via le site web, les formulaires, le dépôt de CV, la création de compte et l'utilisation des services de recrutement.</p>
+    <p>CoinCarrière se conforme aux lois applicables en matière de protection des renseignements personnels, notamment :</p>
+    <ul style="color:#374151;line-height:2">
+      <li>La Loi sur la protection des renseignements personnels dans le secteur privé du Québec (RLRQ, c. P-39.1), telle que modernisée par la Loi 25</li>
+      <li>La Loi sur la protection des renseignements personnels et les documents électroniques (LPRPDE) du Canada</li>
+      <li>Le Règlement général sur la protection des données (RGPD) de l'Union européenne, pour les utilisateurs situés dans l'Espace économique européen</li>
+      <li>La Loi n° 09-08 relative à la protection des personnes physiques à l'égard du traitement des données à caractère personnel du Maroc, pour les utilisateurs situés au Maroc</li>
+    </ul>
+
+    <h5>3. Renseignements personnels collectés</h5>
+    <h6>3.1 Renseignements fournis directement par l'utilisateur</h6>
+    <ul style="color:#374151;line-height:2">
+      <li><strong>Identification :</strong> prénom, nom, adresse courriel, numéro de téléphone</li>
+      <li><strong>Informations professionnelles :</strong> curriculum vitae (CV), lettre de motivation, expérience professionnelle, formation, compétences, certifications</li>
+      <li><strong>Informations de profil :</strong> ville, pays, lien LinkedIn, site web personnel</li>
+      <li><strong>Informations de compte :</strong> identifiants de connexion, mot de passe (chiffré), préférences de notification</li>
+      <li><strong>Correspondances :</strong> messages échangés via la Plateforme, réponses aux formulaires de candidature</li>
+    </ul>
+    <h6>3.2 Renseignements collectés automatiquement</h6>
+    <ul style="color:#374151;line-height:2">
+      <li><strong>Données techniques :</strong> adresse IP, type et version du navigateur, système d'exploitation, résolution d'écran</li>
+      <li><strong>Données de navigation :</strong> pages consultées, durée des visites, pages de renvoi, parcours de navigation</li>
+      <li><strong>Témoins (cookies) :</strong> témoins de session, témoins analytiques, témoins publicitaires (voir section 8)</li>
+      <li><strong>Données de localisation :</strong> pays et région déduits de l'adresse IP</li>
+    </ul>
+    <h6>3.3 Renseignements reçus de tiers</h6>
+    <ul style="color:#374151;line-height:2">
+      <li>Informations transmises par un employeur ou recruteur qui crée un profil candidat dans le cadre d'un processus de recrutement</li>
+      <li>Informations provenant de sources publiques (offres d'emploi publiées sur des sites tiers)</li>
+    </ul>
+
+    <h5>4. Finalités et bases légales du traitement</h5>
+    <div style="overflow-x:auto;margin-bottom:16px;">
+      <table style="width:100%;border-collapse:collapse;font-size:.85rem;">
+        <thead>
+          <tr style="background:#f1f5f9;">
+            <th style="padding:10px 14px;text-align:left;border:1px solid #e2e8f0;font-weight:700;color:#0a1929;">Finalité</th>
+            <th style="padding:10px 14px;text-align:left;border:1px solid #e2e8f0;font-weight:700;color:#0a1929;">Base légale</th>
+          </tr>
+        </thead>
+        <tbody style="color:#374151;line-height:1.7;">
+          <tr><td style="padding:9px 14px;border:1px solid #e2e8f0;">Fournir les services de recrutement (mise en relation candidats-employeurs)</td><td style="padding:9px 14px;border:1px solid #e2e8f0;">Exécution du contrat</td></tr>
+          <tr style="background:#f8fafc;"><td style="padding:9px 14px;border:1px solid #e2e8f0;">Créer et gérer les comptes utilisateurs</td><td style="padding:9px 14px;border:1px solid #e2e8f0;">Exécution du contrat</td></tr>
+          <tr><td style="padding:9px 14px;border:1px solid #e2e8f0;">Permettre le dépôt et la consultation de CV</td><td style="padding:9px 14px;border:1px solid #e2e8f0;">Consentement</td></tr>
+          <tr style="background:#f8fafc;"><td style="padding:9px 14px;border:1px solid #e2e8f0;">Transmettre les candidatures aux employeurs</td><td style="padding:9px 14px;border:1px solid #e2e8f0;">Consentement</td></tr>
+          <tr><td style="padding:9px 14px;border:1px solid #e2e8f0;">Envoyer des notifications relatives aux candidatures (étape, entretien, offre)</td><td style="padding:9px 14px;border:1px solid #e2e8f0;">Exécution du contrat</td></tr>
+          <tr style="background:#f8fafc;"><td style="padding:9px 14px;border:1px solid #e2e8f0;">Envoyer des communications marketing et newsletters</td><td style="padding:9px 14px;border:1px solid #e2e8f0;">Consentement</td></tr>
+          <tr><td style="padding:9px 14px;border:1px solid #e2e8f0;">Améliorer la Plateforme et analyser son utilisation</td><td style="padding:9px 14px;border:1px solid #e2e8f0;">Intérêt légitime</td></tr>
+          <tr style="background:#f8fafc;"><td style="padding:9px 14px;border:1px solid #e2e8f0;">Prévenir la fraude et assurer la sécurité</td><td style="padding:9px 14px;border:1px solid #e2e8f0;">Intérêt légitime</td></tr>
+          <tr><td style="padding:9px 14px;border:1px solid #e2e8f0;">Respecter les obligations légales et réglementaires</td><td style="padding:9px 14px;border:1px solid #e2e8f0;">Obligation légale</td></tr>
+          <tr style="background:#f8fafc;"><td style="padding:9px 14px;border:1px solid #e2e8f0;">Répondre aux demandes et au support</td><td style="padding:9px 14px;border:1px solid #e2e8f0;">Intérêt légitime</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h5>5. Partage et communication des renseignements</h5>
+    <p>Vos renseignements personnels peuvent être communiqués aux catégories de destinataires suivantes :</p>
+    <h6>5.1 Employeurs et recruteurs</h6>
+    <p>Lorsque vous postulez à une offre d'emploi ou déposez votre CV, vos informations professionnelles (CV, coordonnées, expérience) sont transmises aux employeurs concernés afin de traiter votre candidature. Les employeurs sont tenus de respecter la confidentialité de ces informations.</p>
+    <h6>5.2 Sous-traitants et fournisseurs de services</h6>
+    <ul style="color:#374151;line-height:2">
+      <li><strong>Cloudflare, Inc.</strong> (San Francisco, USA) — hébergement, stockage des fichiers (R2), base de données (D1), réseau de diffusion de contenu (CDN)</li>
+      <li><strong>Google LLC</strong> (USA) — Google Analytics (analyse de trafic), Google Ads (publicité)</li>
+      <li><strong>Meta Platforms, Inc.</strong> (USA) — Facebook Ads (publicité)</li>
+      <li><strong>Amazon Web Services</strong> (USA) — envoi de courriels transactionnels (SES)</li>
+    </ul>
+    <p>Ces sous-traitants n'utilisent vos données que dans le cadre des services qu'ils nous fournissent et sont liés par des obligations contractuelles de confidentialité.</p>
+    <h6>5.3 Autorités légales</h6>
+    <p>Nous pouvons communiquer vos renseignements aux autorités compétentes lorsque la loi l'exige, dans le cadre d'une procédure judiciaire, ou pour protéger nos droits légaux.</p>
+    <h6>5.4 Ce que nous ne faisons pas</h6>
+    <p>Nous ne vendons jamais vos renseignements personnels à des tiers. Nous ne louons pas, n'échangeons pas et ne monétisons pas vos données personnelles.</p>
+
+    <h5>6. Transferts hors du Québec et du Canada</h5>
+    <p>Certains de nos sous-traitants sont situés aux États-Unis (Cloudflare, Google, Meta, AWS). Vos renseignements personnels peuvent donc être transférés et traités en dehors du Québec et du Canada.</p>
+    <p>Conformément à la Loi 25, avant tout transfert, nous réalisons une évaluation des facteurs relatifs à la vie privée (EFVP) pour nous assurer que les renseignements bénéficieront d'une protection adéquate. Ces transferts sont encadrés par des clauses contractuelles appropriées.</p>
+    <p>Pour les utilisateurs situés dans l'Union européenne, ces transferts sont effectués sur la base de clauses contractuelles types approuvées par la Commission européenne ou de toute autre garantie prévue par le RGPD.</p>
+
+    <h5>7. Conservation des renseignements</h5>
+    <p>Nous conservons vos renseignements personnels selon les durées suivantes :</p>
+    <div style="overflow-x:auto;margin-bottom:16px;">
+      <table style="width:100%;border-collapse:collapse;font-size:.85rem;">
+        <thead>
+          <tr style="background:#f1f5f9;">
+            <th style="padding:10px 14px;text-align:left;border:1px solid #e2e8f0;font-weight:700;color:#0a1929;">Type de données</th>
+            <th style="padding:10px 14px;text-align:left;border:1px solid #e2e8f0;font-weight:700;color:#0a1929;">Durée de conservation</th>
+          </tr>
+        </thead>
+        <tbody style="color:#374151;line-height:1.7;">
+          <tr><td style="padding:9px 14px;border:1px solid #e2e8f0;">Curriculum vitae (CV) déposés</td><td style="padding:9px 14px;border:1px solid #e2e8f0;">5 ans à compter du dépôt ou de la dernière mise à jour</td></tr>
+          <tr style="background:#f8fafc;"><td style="padding:9px 14px;border:1px solid #e2e8f0;">Comptes candidats</td><td style="padding:9px 14px;border:1px solid #e2e8f0;">5 ans après la dernière connexion</td></tr>
+          <tr><td style="padding:9px 14px;border:1px solid #e2e8f0;">Comptes employeurs / recruteurs</td><td style="padding:9px 14px;border:1px solid #e2e8f0;">Durée de la relation contractuelle + 3 ans</td></tr>
+          <tr style="background:#f8fafc;"><td style="padding:9px 14px;border:1px solid #e2e8f0;">Données de candidature</td><td style="padding:9px 14px;border:1px solid #e2e8f0;">5 ans après la clôture du poste</td></tr>
+          <tr><td style="padding:9px 14px;border:1px solid #e2e8f0;">Journaux d'audit</td><td style="padding:9px 14px;border:1px solid #e2e8f0;">3 ans</td></tr>
+          <tr style="background:#f8fafc;"><td style="padding:9px 14px;border:1px solid #e2e8f0;">Données analytiques (anonymisées)</td><td style="padding:9px 14px;border:1px solid #e2e8f0;">26 mois</td></tr>
+          <tr><td style="padding:9px 14px;border:1px solid #e2e8f0;">Correspondances / messages</td><td style="padding:9px 14px;border:1px solid #e2e8f0;">5 ans</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>À l'expiration de ces délais, les renseignements sont supprimés ou anonymisés de manière irréversible. Vous pouvez demander la suppression anticipée de vos données à tout moment (voir section 9).</p>
+
+    <h5>8. Témoins (cookies) et technologies de suivi</h5>
+    <h6>8.1 Catégories de témoins utilisés</h6>
+    <div style="overflow-x:auto;margin-bottom:16px;">
+      <table style="width:100%;border-collapse:collapse;font-size:.85rem;">
+        <thead>
+          <tr style="background:#f1f5f9;">
+            <th style="padding:10px 14px;text-align:left;border:1px solid #e2e8f0;font-weight:700;color:#0a1929;">Catégorie</th>
+            <th style="padding:10px 14px;text-align:left;border:1px solid #e2e8f0;font-weight:700;color:#0a1929;">Finalité</th>
+            <th style="padding:10px 14px;text-align:left;border:1px solid #e2e8f0;font-weight:700;color:#0a1929;">Durée</th>
+            <th style="padding:10px 14px;text-align:left;border:1px solid #e2e8f0;font-weight:700;color:#0a1929;">Fournisseur</th>
+          </tr>
+        </thead>
+        <tbody style="color:#374151;line-height:1.7;">
+          <tr><td style="padding:9px 14px;border:1px solid #e2e8f0;">Essentiels</td><td style="padding:9px 14px;border:1px solid #e2e8f0;">Authentification, sécurité, fonctionnement du site</td><td style="padding:9px 14px;border:1px solid #e2e8f0;">Session / 7 jours</td><td style="padding:9px 14px;border:1px solid #e2e8f0;">CoinCarrière</td></tr>
+          <tr style="background:#f8fafc;"><td style="padding:9px 14px;border:1px solid #e2e8f0;">Analytiques</td><td style="padding:9px 14px;border:1px solid #e2e8f0;">Mesure d'audience, amélioration du service</td><td style="padding:9px 14px;border:1px solid #e2e8f0;">26 mois</td><td style="padding:9px 14px;border:1px solid #e2e8f0;">Google Analytics</td></tr>
+          <tr><td style="padding:9px 14px;border:1px solid #e2e8f0;">Publicitaires</td><td style="padding:9px 14px;border:1px solid #e2e8f0;">Publicités personnalisées, mesure de performance</td><td style="padding:9px 14px;border:1px solid #e2e8f0;">90 jours</td><td style="padding:9px 14px;border:1px solid #e2e8f0;">Google Ads, Meta Ads</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h6>8.2 Gestion des témoins</h6>
+    <p>Vous pouvez à tout moment modifier vos préférences en matière de témoins :</p>
+    <ul style="color:#374151;line-height:2">
+      <li>Via les paramètres de votre navigateur (bloquer ou supprimer les témoins)</li>
+      <li>Via les outils de désactivation de Google Analytics</li>
+      <li>Via les paramètres publicitaires de votre compte Google ou Facebook</li>
+    </ul>
+    <p>Le refus des témoins essentiels peut affecter le fonctionnement de la Plateforme.</p>
+
+    <h5>9. Vos droits</h5>
+    <p><strong>Pour tous les utilisateurs (Loi 25 / LPRPDE)</strong></p>
+    <ul style="color:#374151;line-height:2">
+      <li><strong>Droit d'accès :</strong> obtenir la confirmation que nous détenons des renseignements vous concernant et en recevoir une copie</li>
+      <li><strong>Droit de rectification :</strong> faire corriger des renseignements inexacts, incomplets ou équivoques</li>
+      <li><strong>Droit de suppression :</strong> demander la suppression de vos renseignements lorsqu'ils ne sont plus nécessaires</li>
+      <li><strong>Droit de retirer votre consentement :</strong> retirer à tout moment un consentement préalablement donné</li>
+      <li><strong>Droit à la désindexation :</strong> demander la cessation de la diffusion de vos renseignements (déréférencement)</li>
+      <li><strong>Droit à la portabilité :</strong> recevoir vos renseignements dans un format technologique structuré et couramment utilisé</li>
+    </ul>
+    <p><strong>Droits additionnels pour les utilisateurs dans l'UE/EEE (RGPD)</strong></p>
+    <ul style="color:#374151;line-height:2">
+      <li><strong>Droit d'opposition :</strong> vous opposer au traitement fondé sur l'intérêt légitime</li>
+      <li><strong>Droit à la limitation :</strong> demander la restriction du traitement dans certains cas</li>
+      <li><strong>Droit d'introduire une réclamation :</strong> auprès de l'autorité de contrôle compétente (ex. : CNIL en France)</li>
+    </ul>
+    <p><strong>Droits additionnels pour les utilisateurs au Maroc (Loi 09-08)</strong></p>
+    <ul style="color:#374151;line-height:2">
+      <li><strong>Droit d'opposition :</strong> vous opposer, pour des motifs légitimes, au traitement de vos données</li>
+      <li><strong>Droit d'introduire une réclamation :</strong> auprès de la Commission Nationale de contrôle de la protection des Données à caractère Personnel (CNDP)</li>
+    </ul>
+    <p><strong>Comment exercer vos droits</strong><br/>Envoyez votre demande à <a href="mailto:contact@coincarriere.com" style="color:#0077B6">contact@coincarriere.com</a> en précisant votre nom, votre adresse courriel et le droit que vous souhaitez exercer. Nous répondrons dans un délai de 30 jours.</p>
+
+    <h5>10. Sécurité des renseignements</h5>
+    <p>Nous mettons en œuvre des mesures de sécurité techniques et organisationnelles appropriées pour protéger vos renseignements personnels, notamment :</p>
+    <ul style="color:#374151;line-height:2">
+      <li>Chiffrement des mots de passe (hachage irréversible)</li>
+      <li>Chiffrement des communications (HTTPS/TLS)</li>
+      <li>Authentification par jetons sécurisés (JWT) avec expiration</li>
+      <li>Isolation des données par organisation (architecture multi-tenant)</li>
+      <li>Contrôle d'accès basé sur les rôles (RBAC)</li>
+      <li>Journaux d'audit sur toutes les opérations sensibles</li>
+      <li>Limitation du débit des requêtes (rate limiting)</li>
+      <li>Sauvegardes régulières des données</li>
+    </ul>
+    <p>Malgré ces mesures, aucune méthode de transmission ou de stockage électronique n'est totalement sécurisée. En cas d'incident de confidentialité, nous vous en aviserons conformément aux lois applicables.</p>
+
+    <h5>11. Protection des mineurs</h5>
+    <p>La Plateforme est destinée aux personnes âgées de 16 ans et plus. Nous ne collectons pas sciemment de renseignements personnels auprès de personnes de moins de 16 ans. Si nous apprenons que nous avons collecté des renseignements d'un mineur, nous les supprimerons dans les plus brefs délais.</p>
+
+    <h5>12. Incident de confidentialité</h5>
+    <p>Conformément à la Loi 25, en cas d'incident de confidentialité présentant un risque de préjudice sérieux, nous :</p>
+    <ul style="color:#374151;line-height:2">
+      <li>Prendrons les mesures raisonnables pour diminuer les risques et prévenir de nouveaux incidents</li>
+      <li>Aviserons la Commission d'accès à l'information du Québec (CAI)</li>
+      <li>Aviserons les personnes concernées</li>
+      <li>Tiendrons un registre de l'incident</li>
+    </ul>
+
+    <h5>13. Modifications de cette politique</h5>
+    <p>Nous pouvons mettre à jour cette politique de confidentialité périodiquement. En cas de modification substantielle, nous vous en informerons par courriel ou par un avis bien visible sur la Plateforme. La date de dernière mise à jour est indiquée en haut de cette page.</p>
+
+    <h5>14. Contact</h5>
+    <p>Pour toute question relative à cette politique ou pour exercer vos droits :</p>
+    <p>📧 <a href="mailto:contact@coincarriere.com" style="color:#0077B6">contact@coincarriere.com</a><br/>
+    Entreprise : 9558-9321 Québec inc. (CoinCarrière)<br/>
+    Siège social : Québec, QC, Canada</p>
+    <p>Si vous estimez que vos droits n'ont pas été respectés, vous pouvez déposer une plainte auprès de :</p>
+    <ul style="color:#374151;line-height:2">
+      <li><strong>Québec :</strong> Commission d'accès à l'information du Québec (CAI) — <a href="https://cai.gouv.qc.ca" style="color:#0077B6">cai.gouv.qc.ca</a></li>
+      <li><strong>Canada :</strong> Commissariat à la protection de la vie privée du Canada — <a href="https://priv.gc.ca" style="color:#0077B6">priv.gc.ca</a></li>
+      <li><strong>Union européenne :</strong> l'autorité de contrôle de votre pays de résidence</li>
+      <li><strong>Maroc :</strong> Commission Nationale de contrôle de la protection des Données à caractère Personnel (CNDP) — <a href="https://cndp.ma" style="color:#0077B6">cndp.ma</a></li>
+    </ul>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     STICKY BAR
+═══════════════════════════════════════════ -->
+<div id="sticky-bar">
+  <span class="s-text">ضياع الوقت و عدم الحضور؟ جرب الفرز الذكي مجاناً</span>
+  <a href="https://coincarriere.com/register?type=company"
+    
+     class="s-btn">جرّب المنصة الآن</a>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     EXIT POPUP
+═══════════════════════════════════════════ -->
+<div id="exit-overlay" style="display:none;position:fixed;inset:0;z-index:1000;background:rgba(10,25,41,.8);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:20px;">
+  <div class="popup-box">
+    <button class="popup-close" id="close-popup">&#x2715;</button>
+    <div class="popup-brand">
+      <img src="https://res.cloudinary.com/dl296lrkq/image/upload/v1777291285/1762829178875-w23oav1d4pb_wgqrdo.png" alt="CoinCarrière logo" class="popup-brand-img"/>
+    </div>
+    <h3 style="font-size:1.2rem;font-weight:900;color:#0a1929;margin-bottom:10px;line-height:1.4;">
+      Attendez — votre temps vaut plus que ça
+    </h3>
+    <p style="font-size:.88rem;color:#4b5563;line-height:1.85;margin-bottom:4px;">
+      Chaque jour sans CoinCarrière = un autre jour de tri de CV inadéquats<br/>
+      et d'abséntéisme en entrevue
+    </p>
+    <div class="popup-hi">L'inscription est gratuite — commencez et voyez la différence dès la première semaine</div>
+    <a href="https://coincarriere.com/register?type=company"
+       onclick="document.getElementById('exit-overlay').style.display='none'"
+       class="btn" style="display:block;margin-bottom:12px;font-size:.95rem;padding:13px;">
+      Essayer maintenant
+    </a>
+    <button onclick="document.getElementById('exit-overlay').style.display='none';"
+      style="background:none;border:none;cursor:pointer;font-size:.82rem;color:#dc2626;font-family:'Cairo',sans-serif;font-weight:600;text-decoration:none;opacity:.7;transition:background .2s,color .2s,border-radius .2s;padding:6px 14px;border-radius:6px;" onmouseover="this.style.background='#dc2626';this.style.color='#fff'" onmouseout="this.style.background='none';this.style.color='#dc2626'">
+      Non merci, je vais continuer le tri manuel
+    </button>
+  </div>
+</div>
+
+
+<script>
+  // ── Scroll Reveal ──────────────────────────────
+  // Add rv-ready to body so CSS activates animation classes
+  document.body.classList.add('rv-ready');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('on'); obs.unobserve(e.target); }
+    });
+  }, {threshold: 0.1});
+  document.querySelectorAll('.rv,.rv2,.rv3').forEach(el => obs.observe(el));
+
+  // ── Count Up Stats ─────────────────────────────
+  const statsSection = document.querySelector('.stats-section');
+  const countUpElements = document.querySelectorAll('.count-up');
+  let statsAnimated = false;
+
+  function animateCountUp(element) {
+    const target = Number(element.dataset.target || 0);
+    const prefix = element.dataset.prefix || '';
+    const suffix = element.dataset.suffix || '';
+    const duration = 1500;
+    const startTime = performance.now();
+
+    function frame(now) {
+      const progress = Math.min((now - startTime) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = Math.round(target * eased);
+      element.textContent = `${prefix}${current}${suffix}`;
+      if (progress < 1) {
+        requestAnimationFrame(frame);
+      } else {
+        element.textContent = `${prefix}${target}${suffix}`;
+      }
+    }
+
+    requestAnimationFrame(frame);
+  }
+
+  function startStatsCountUp() {
+    if (statsAnimated || !countUpElements.length) return;
+    statsAnimated = true;
+    countUpElements.forEach((element) => {
+      element.textContent = '0';
+      animateCountUp(element);
+    });
+  }
+
+  if (statsSection && 'IntersectionObserver' in window) {
+    const statsObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          startStatsCountUp();
+          statsObserver.disconnect();
+        }
+      });
+    }, { threshold: 0.35 });
+
+    statsObserver.observe(statsSection);
+  } else {
+    window.addEventListener('load', startStatsCountUp, { once: true });
+  }
+
+  // ── Sticky Bar ─────────────────────────────────
+  const bar = document.getElementById('sticky-bar');
+  const finalSec = document.getElementById('final-cta-section');
+  function updateBar() {
+    const y = window.scrollY;
+    const fTop = finalSec ? finalSec.getBoundingClientRect().top + y : Infinity;
+    const atFinal = (y + window.innerHeight) >= fTop + 60;
+    bar.style.transform = (y > 260 && !atFinal) ? 'translateY(0)' : 'translateY(100%)';
+  }
+  window.addEventListener('scroll', updateBar, {passive:true});
+  window.addEventListener('resize', updateBar, {passive:true});
+
+  // ── Logo hide after hero ───────────────────────
+  const heroLogo = document.getElementById("hero-logo");
+  const heroEl   = document.querySelector(".hero");
+  function updateLogo(){
+    if(!heroLogo || !heroEl) return;
+    const bottom = heroEl.getBoundingClientRect().bottom;
+    // Fade gradually over a 160px scroll range instead of snapping at a fixed point
+    const fadeRange = 160;
+    let opacity = (bottom - 60) / fadeRange;
+    opacity = Math.max(0, Math.min(1, opacity));
+    heroLogo.style.opacity = opacity;
+    heroLogo.style.pointerEvents = opacity > 0.05 ? "auto" : "none";
+  }
+  window.addEventListener("scroll", updateLogo, {passive:true});
+  updateLogo();
+
+  // ── Logos Marquee — JS driven, infinite loop ───────
+  (function(){
+    const tracks = document.querySelectorAll('.marquee-track');
+    if(!tracks.length) return;
+
+    tracks.forEach(function(track){
+      const section = track.closest('.logos-section, .marquee-wrapper') || track.parentElement;
+      let pos = 0;
+      let raf = null;
+      let started = false;
+      const speed = 0.6;
+
+      function getHalfWidth(){
+        const groups = track.querySelectorAll('.marquee-group');
+        if(groups.length >= 2) return groups[0].offsetWidth;
+        return track.scrollWidth / 2;
+      }
+
+      function step(){
+        const half = getHalfWidth();
+        if(half === 0){ raf = requestAnimationFrame(step); return; }
+        pos += speed;
+        if(pos >= half) pos = pos - half;
+        track.style.transform = 'translateX(-' + pos + 'px)';
+        raf = requestAnimationFrame(step);
+      }
+
+      function startMarquee(){
+        if(started) return;
+        started = true;
+        const imgs = Array.from(track.querySelectorAll('img'));
+        if(!imgs.length){ raf = requestAnimationFrame(step); return; }
+        let count = 0;
+        function onLoad(){ count++; if(count === imgs.length) raf = requestAnimationFrame(step); }
+        imgs.forEach(img => {
+          if(img.complete && img.naturalWidth > 0){ onLoad(); return; }
+          img.addEventListener('load',  onLoad, {once:true});
+          img.addEventListener('error', onLoad, {once:true});
+        });
+        setTimeout(()=>{ if(!raf) raf = requestAnimationFrame(step); }, 1500);
+      }
+
+      if('IntersectionObserver' in window){
+        const obs = new IntersectionObserver(entries=>{
+          entries.forEach(e=>{ if(e.isIntersecting){ startMarquee(); obs.disconnect(); } });
+        },{threshold:0.1});
+        obs.observe(track);
+      } else {
+        startMarquee();
+      }
+    });
+  })();
+
+  // ── Exit Intent ────────────────────────────────
+  let popShown = false;
+  const ov = document.getElementById('exit-overlay');
+
+  function showPopup() {
+    if (popShown) return;
+    popShown = true;
+    ov.style.display = 'flex';
+  }
+
+  // Desktop only: mouse exits page toward top
+  document.addEventListener('mouseleave', e => {
+    if (e.clientY <= 5) showPopup();
+  });
+
+  document.getElementById('close-popup').addEventListener('click', () => ov.style.display='none');
+  ov.addEventListener('click', e => { if(e.target===ov) ov.style.display='none'; });
+
+  // ── Testimonials Marquee ──────────────────────────────
+  const testimonialTracks = document.querySelectorAll('.testimonial-track');
+  function setupTestimonialsMarquee() {
+    testimonialTracks.forEach((track) => {
+      track.querySelectorAll('[data-testimonial-clone="true"]').forEach(node => node.remove());
+      const originalCards = Array.from(track.children).filter((node) => node.getAttribute('data-testimonial-clone') !== 'true');
+      const cloneCycles = 3;
+      for (let i = 0; i < cloneCycles; i += 1) {
+        originalCards.forEach((card) => {
+          const clone = card.cloneNode(true);
+          clone.setAttribute('data-testimonial-clone', 'true');
+          clone.setAttribute('aria-hidden', 'true');
+          track.appendChild(clone);
+        });
+      }
+    });
+  }
+  setupTestimonialsMarquee();
+  window.addEventListener('load', setupTestimonialsMarquee);
+  window.addEventListener('resize', setupTestimonialsMarquee);
+
+  // ── Hero Video Autoplay + Lightweight Loading ─────────
+  const heroVideo = document.getElementById('hero-video');
+
+  function startHeroVideo() {
+    if (!heroVideo) return;
+    heroVideo.muted = true;
+    heroVideo.defaultMuted = true;
+    heroVideo.playsInline = true;
+    heroVideo.setAttribute('playsinline', '');
+    const playPromise = heroVideo.play();
+    if (playPromise && typeof playPromise.catch === 'function') {
+      playPromise.catch(() => {});
+    }
+  }
+
+  if (heroVideo) {
+    startHeroVideo();
+    heroVideo.addEventListener('canplay', startHeroVideo, { once: true });
+    window.addEventListener('load', startHeroVideo, { once: true });
+  }
+
+  // ── Steps Sequential Highlight ─────────────────
+  (function(){
+    const stepsRow  = document.querySelector('.steps-row');
+    if(!stepsRow) return;
+
+    const steps     = Array.from(stepsRow.querySelectorAll('.step'));
+    const HOLD      = 1200;   // ms each card stays highlighted
+    const GAP       = 340;    // ms between cards
+    const LOOP_WAIT = 5000;   // ms idle before repeating
+    let   loopTimer = null;
+    let   running   = false;
+
+    /* ---- remove ring helpers ---- */
+    function clearRings(el){
+      el.querySelectorAll('.step-pulse-ring').forEach(r=>r.remove());
+    }
+
+    /* ---- highlight one card ---- */
+    function highlightStep(el){
+      clearRings(el);
+      el.classList.remove('step-highlight-exit');
+      el.classList.add('step-highlight');
+      /* inject pulse ring */
+      const ring = document.createElement('span');
+      ring.className = 'step-pulse-ring';
+      el.appendChild(ring);
+      ring.addEventListener('animationend', ()=>ring.remove(), {once:true});
+    }
+
+    /* ---- remove highlight from one card ---- */
+    function unhighlightStep(el){
+      el.classList.remove('step-highlight');
+      el.classList.add('step-highlight-exit');
+      clearRings(el);
+      /* clean exit class after transition */
+      setTimeout(()=>el.classList.remove('step-highlight-exit'), 520);
+    }
+
+    /* ---- run the full sequence ---- */
+    function runSequence(){
+      if(running) return;
+      running = true;
+      clearTimeout(loopTimer);
+
+      steps.forEach(s=>{ unhighlightStep(s); s.classList.remove('step-highlight-exit'); });
+
+      let i = 0;
+      function next(){
+        if(i > 0) unhighlightStep(steps[i-1]);
+        if(i >= steps.length){
+          running = false;
+          /* schedule loop repeat */
+          loopTimer = setTimeout(runSequence, LOOP_WAIT);
+          return;
+        }
+        highlightStep(steps[i]);
+        i++;
+        setTimeout(next, HOLD + GAP);
+      }
+      next();
+    }
+
+    /* ---- Intersection Observer trigger ---- */
+    const observer = new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting && !running){
+          /* small delay so user sees section first */
+          setTimeout(runSequence, 400);
+        }
+      });
+    }, { threshold: 0.28 });
+
+    observer.observe(stepsRow);
+  })();
+
+
+  // ── Meta Pixel: track Lead on all conversion CTA clicks ──
+  // Covers: hero/section "جرّب المنصة الآن" buttons (.btn, .s-btn).
+  // The contact form submit button has its own validation-gated Lead
+  // event inside submitContactForm() above, so it's excluded here to
+  // avoid double counting / false leads on invalid submissions.
+  // Explicitly excludes non-conversion controls: popup close
+  // (.popup-close, exit-overlay dismiss), legal/footer links
+  // (.footer-legal-btn, .legal-close), and "send another message" reset.
+  (function(){
+    if (typeof fbq !== 'function') return;
+
+    const EXCLUDE_SELECTOR = '.popup-close, .footer-legal-btn, .legal-close';
+    const EXCLUDE_HANDLERS = ['resetContactForm()', "exit-overlay').style.display='none'"];
+
+    function isExcluded(el){
+      if (el.closest(EXCLUDE_SELECTOR)) return true;
+      const onclick = el.getAttribute('onclick') || '';
+      return EXCLUDE_HANDLERS.some(h => onclick.indexOf(h) !== -1);
+    }
+
+    document.querySelectorAll('.btn, .s-btn').forEach(function(el){
+      if (isExcluded(el)) return;
+      el.addEventListener('click', function(){
+        fbq('track', 'Lead');
+      });
+    });
+  })();
+
+
+  function openLegal(title, key){
+    document.getElementById('legal-title').textContent = title;
+    const src = document.getElementById('legal-content-' + key);
+    const body = document.getElementById('legal-body-content');
+    body.innerHTML = src ? src.innerHTML : '<div class="legal-content-inner"><p style="color:#4b5563;text-align:center;padding:40px 0">المحتوى قريباً.</p></div>';
+    const ov = document.getElementById('legal-overlay');
+    ov.classList.add('open');
+    body.scrollTop = 0;
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLegal(){
+    document.getElementById('legal-overlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', e => { if(e.key==='Escape') closeLegal(); });
+
+
+  const heroSection = document.querySelector('.hero');
+  if (heroVideo && heroSection) {
+    function updateHeroVideoVisibility() {
+      const heroRect = heroSection.getBoundingClientRect();
+      heroVideo.style.opacity = heroRect.bottom > 0 ? '1' : '0';
+    }
+    window.addEventListener('scroll', updateHeroVideoVisibility, {passive:true});
+    updateHeroVideoVisibility();
+  }
+
+  /* Remove unused heroVideo reference on mobile */
+  if(window.innerWidth <= 900){
+    /* Pause all non-essential animations */
+    document.querySelectorAll('.marquee-track').forEach(el=>{
+      el.style.animationPlayState = 'running';
+    });
+  }
+
+</script>
+
+</body>
+</html>
